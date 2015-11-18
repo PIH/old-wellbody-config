@@ -1,0 +1,173 @@
+{
+    "general":{
+        "title": "General",
+        "displayByDefault": true,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Visit",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "defaultSections": true,
+        "sections": {
+            "pivotTable":{
+                "type": "pivotTable",
+                "displayOrder": 0,
+                "title": "Vitals Flowsheet",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Pulse",
+                        "Diastolic",
+                        "Systolic",
+                        "Temperature",
+                        "RR",
+                        "SPO2",
+                        "Height",
+                        "WEIGHT",
+                        "M/C Days"
+                    ],
+                    "labConcepts": ""
+                }
+            },
+            "pacsOrders":{
+                "type":"pacsOrders",
+                "displayOrder": 1,
+                "title": "Pacs Orders Visit Page",
+                "config":{
+                    "orderType": "Radiology Order"
+                }
+            }
+        }
+    },
+    "dischargeSummary":{
+        "title": "Discharge Summary",
+        "printing": {
+            "title": "Bahmni",
+            "header": "Discharge Summary",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections": {
+            "PatientInformation":{
+                "type": "patientInformation",
+                "displayOrder": 0,
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                }
+            },
+            "admissionDetails":{
+                "type": "admissionDetails",
+                "displayOrder": 1,
+                "config": {
+                    "showDetailsButton": true
+                }
+            },
+            "weightInitial":{
+                "type": "observation",
+                "displayOrder": 2,
+                "title": "At Admission",
+                "config": {
+                    "conceptNames": ["WEIGHT"],
+                    "scope": "initial"
+                }
+            },
+            "weightLatest": {
+                "type": "observation",
+                "displayOrder": 3,
+                "title": "At Discharge",
+                "config": {
+                    "conceptNames": ["WEIGHT"],
+                    "scope": "latest"
+                }
+            },
+            "diagnoses":{
+                "type": "diagnosis",
+                "displayOrder": 4,
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": false,
+                    "showOrder": false,
+                    "showDetailsButton": true
+                }
+            },
+            "clinicalNotes":{
+                "type": "observation",
+                "displayOrder": 5,
+                "title": "Clinical Notes",
+                "config": {
+                    "conceptNames": [
+                        "History and Examination Notes",
+                        "Discharge Summary",
+                        "Lab Investigation Notes",
+                        "Radiology Notes",
+                        "Other Notes"
+                    ],
+                    "scope": "latest",
+                    "numberOfVisits": "1"
+                }
+            },
+            "labInvestigations":{
+                "type": "investigationResult",
+                "displayOrder": 6,
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 1,
+                    "latestAccessionCount": 1
+                }
+            },
+            "treatments":{
+                "type": "treatment",
+                "displayOrder": 7,
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+            },
+            "adviceOnDischarge":{
+                "type": "observation",
+                "displayOrder": 8,
+                "title": "Advice on Discharge",
+                "config": {
+                    "conceptNames": [
+                        "Additional Advice on Discharge",
+                        "Follow up Date",
+                        "Discharge Summary, Plan for follow up"
+                    ],
+                    "scope": "latest"
+                }
+            }
+        }
+    },
+    "orders":{
+      "title": "Orders",
+      "sections": {
+          "Radiology Orders": {
+              "type": "order",
+              "displayOrder": 0,
+              "title": "Radiology Orders",
+              "config": {
+                  "title": "Radiology Orders",
+                  "name": "ordersControl",
+                  "orderType": "Radiology Order",
+                  "conceptNames": [
+                      "Summary"
+                  ]
+              }
+          }
+      }
+
+    }
+}
