@@ -3,6 +3,8 @@
 # packages BAHMNI components from the vagrant box 
 # needs to be run as sudo
 
+cd "$(dirname "$0")"
+
 service tomcat stop
 sleep 10
 
@@ -14,7 +16,7 @@ rm -rf $DIST_DIR
 mkdir $DIST_DIR
 
 tar -czf $DIST_DIR/dot.OpenMRS.tgz --directory=/home/bahmni .OpenMRS
-tar -czf $DIST_DIR/bahmni_config.tgz --directory=/var/www bahmni_config
+tar -chzf $DIST_DIR/bahmni_config.tgz --directory=/var/www bahmni_config
 tar -czf $DIST_DIR/openmrs.webapp.tgz --directory=/home/bahmni/apache-tomcat-8.0.12/webapps openmrs
 tar -czf $DIST_DIR/bahmnireports.webapp.tgz --directory=/home/bahmni/apache-tomcat-8.0.12/webapps bahmnireports
 tar -czf $DIST_DIR/bahmniapps.tgz --directory=/var/www bahmniapps
