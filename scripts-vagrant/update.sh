@@ -4,11 +4,14 @@ TOMCAT_DIR=/home/cneumann/apache-tomcat-7.0.65
 BAHMNI_DIST_DIR=~/bahmni-dist
 
 #sudo service tomcat7 stop
+$TOMCAT_DIR/bin/shutdown.sh
 
 cd $TOMCAT_DIR/webapps
 
 # save configs
 cp $TOMCAT_DIR/webapps/bahmnireports/WEB-INF/classes/application.properties /tmp
+rm -rf $TOMCAT_DIR/temp/*
+rm -rf $TOMCAT_DIR/work/*
 
 tar xzf $BAHMNI_DIST_DIR/bahmnireports.webapp.tgz
 tar xzf $BAHMNI_DIST_DIR/openmrs.webapp.tgz
@@ -19,11 +22,12 @@ echo "edit $TOMCAT_DIR/webapps/bahmnireports/WEB-INF/classes/application.propert
 cd ~
 
 cp .OpenMRS/openmrs-runtime.properties /tmp
+rm ~/.OpenMRS/modules/*
 
 tar xzf $BAHMNI_DIST_DIR/dot.OpenMRS.tgz 
-mv dot.OpenMRS/ .OpenMRS
-mkdir .OpenMRS/patient_images
-mv /tmp/openmrs-runtime.properties /home/tomcat7/.OpenMRS/openmrs-runtime.properties
+#mv dot.OpenMRS/ .OpenMRS
+#mkdir .OpenMRS/patient_images
+mv /tmp/openmrs-runtime.properties ~/.OpenMRS/openmrs-runtime.properties
 #sudo sed -i.bak "s/root/home\/tomcat7/g" /home/tomcat7/.OpenMRS/bahmnicore.properties
 
 echo "edit /home/tomcat7/.OpenMRS/openmrs-runtime.properties and change connection.* as needed"
@@ -31,6 +35,8 @@ echo "edit /home/tomcat7/.OpenMRS/openmrs-runtime.properties and change connecti
 #sudo service tomcat7 start
 
 cd /var/www
+rm -rf bahmni_config bahmniapps
+
 tar xzf $BAHMNI_DIST_DIR/bahmni_config.tgz
 tar xzf $BAHMNI_DIST_DIR/bahmniapps.tgz 
 #sudo chown -R bahmniapps bahmni_config
