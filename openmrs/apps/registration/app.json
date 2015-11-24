@@ -17,17 +17,12 @@
             "activeVisitUuid"
         ],
         "config" : {
-             "__additionalPatientInformation" : [
-                { "name":"debt", "display":true },
-                { "name":"distanceFromCenter", "display":true },
-                { "name":"isUrban", "display":true },
-                { "name":"cluster", "display":true },
-                { "name":"RationCard", "display":true },
-                { "name":"familyIncome", "display":true }
+            "additionalPatientInformation" : [
+                { "name":"WBA Paper ID", "display":"true" }
             ],
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "freeTextAddressFields": ["address1"]
+                "freeTextAddressFields": ["cityVillage", "address1"]
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
@@ -69,16 +64,10 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "__address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
             },
-            "__patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
+            "patientSearch": {
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "WBA Paper ID",
+                    "fields": ["WBA Paper ID"]
                 }
             }
         }

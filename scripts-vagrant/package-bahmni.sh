@@ -23,7 +23,5 @@ tar -czf $DIST_DIR/bahmniapps.tgz --directory=/var/www bahmniapps
 mysqldump -u $MYSQL_USER -p`echo $MYSQL_PASSWORD` openmrs > $DIST_DIR/openmrs.mysqldump.sql
 # get rid of relevatreference to openmrs-user in sql dump
 
-
 cp ./configs/* $DIST_DIR
-
 
