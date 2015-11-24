@@ -17,16 +17,8 @@
             "activeVisitUuid"
         ],
         "config" : {
-             "additionalPatientInformation" : [
-                { "name":"WbaPaperID", "display":"true" }
-             ],
-             "__additionalPatientInformation" : [
-                { "name":"debt", "display":true },
-                { "name":"distanceFromCenter", "display":true },
-                { "name":"isUrban", "display":true },
-                { "name":"cluster", "display":true },
-                { "name":"RationCard", "display":true },
-                { "name":"familyIncome", "display":true }
+            "additionalPatientInformation" : [
+                { "name":"WBA Paper ID", "display":"true" }
             ],
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
@@ -75,7 +67,7 @@
             "patientSearch": {
                 "customAttributes": {
                     "label": "WBA Paper ID",
-                    "fields": ["WbaPaperID"]
+                    "fields": ["WBA Paper ID"]
                 }
             }
         }
