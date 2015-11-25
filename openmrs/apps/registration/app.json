@@ -17,9 +17,6 @@
             "activeVisitUuid"
         ],
         "config" : {
-            "additionalPatientInformation" : [
-                { "name":"WBA Paper ID", "display":"true" }
-            ],
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["cityVillage", "address1"]
