@@ -25,7 +25,7 @@
                 "Doctor":"provider",
                 "Parent":"patient"
             },
-
+            "prepopulateFields" : ["Country"], 
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "WBA",
             "defaultVisitType": "OPD",
