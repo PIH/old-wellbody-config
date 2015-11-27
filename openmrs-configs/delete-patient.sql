@@ -36,4 +36,6 @@ delete from person_attribute where person_id > @patientid and person_id not in (
 delete from person_address where person_id > @patientid and person_id not in (select person_id from users);
 delete from person where person_id > @patientid and person_id not in (select person_id from users);
 
-
+#
+# TODO, get rid of idgen_log_entry entries	
+	
