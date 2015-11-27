@@ -1,13 +1,24 @@
 {
+  "bahmniClinicalConceptSetGroupVitalsABCHistory": {
+       "id": "bahmni.clinical.conceptSetGroup.vitals.history",
+       "extensionPointId": "org.bahmni.clinical.conceptSetGroup.vitals_concept",
+       "type": "config",
+       "extensionParams": {
+       "conceptName": "Vitals",
+       "default": true
+      },
+      "order": 1,
+      "requiredPrivilege": "app:clinical"
+  },
   "vitals": {
       "id": "bahmni.clinical.consultation.vitals",
       "extensionPointId": "org.bahmni.clinical.consultation.board",
       "type": "link",
       "label": "Vitals",
-      "url": "concept-set/Vitals",
+      "url": "concept-set-group/vitals_concept",
       "icon": "icon-user-md",
       "order": 1,
-      "requiredPrivilege": "app:clinical"
+      "requiredPrivilege": "app:clinical:observationTab"
   },
   "observations": {
     "id": "bahmni.clinical.consultation.observations",
