@@ -17,9 +17,6 @@
             "activeVisitUuid"
         ],
         "config" : {
-            "additionalPatientInformation" : [
-                { "name":"WBA Paper ID", "display":"true" }
-            ],
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["cityVillage", "address1"]
@@ -28,7 +25,7 @@
                 "Doctor":"provider",
                 "Parent":"patient"
             },
-
+            "prepopulateFields" : ["Country"], 
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "WBA",
             "defaultVisitType": "OPD",
@@ -56,13 +53,22 @@
                 "REGISTRATION FEES": {
                     "required": false,
                     "label": "Fee"
+                },
+                "Payment type": {
+                    "required": true
+                },
+                "Payment received": {
+                    "required": true
+                },
+                "Patient category" : {
+                    "required": true
+                },
+                "Type of visit": {
+                    "required": true
                 }
             },
             "fieldValidation" : {
-                "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
-                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "__address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
+                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
             },
             "patientSearch": {
                 "customAttributes": {
