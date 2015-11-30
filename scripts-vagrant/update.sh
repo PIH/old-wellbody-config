@@ -1,7 +1,8 @@
 #!/bin/bash
 
 TOMCAT_DIR=/home/cneumann/apache-tomcat-7.0.65
-BAHMNI_DIST_DIR=~/bahmni-dist
+#BAHMNI_DIST_DIR=~/bahmni-dist
+BAHMNI_DIST_DIR=~/b
 
 #sudo service tomcat7 stop
 $TOMCAT_DIR/bin/shutdown.sh
@@ -12,9 +13,12 @@ cd $TOMCAT_DIR/webapps
 cp $TOMCAT_DIR/webapps/bahmnireports/WEB-INF/classes/application.properties /tmp
 rm -rf $TOMCAT_DIR/temp/*
 rm -rf $TOMCAT_DIR/work/*
+rm -rf $TOMCAT_DIR/webapps/openmrs
+rm -rf $TOMCAT_DIR/webapps/bahmnireports
 
 tar xzf $BAHMNI_DIST_DIR/bahmnireports.webapp.tgz
-tar xzf $BAHMNI_DIST_DIR/openmrs.webapp.tgz
+#tar xzf $BAHMNI_DIST_DIR/openmrs.webapp.tgz
+cp $BAHMNI_DIST_DIR/openmrs.war $TOMCAT_DIR/webapps
 mv /tmp/application.properties $TOMCAT_DIR/webapps/bahmnireports/WEB-INF/classes/application.properties
 
 echo "edit $TOMCAT_DIR/webapps/bahmnireports/WEB-INF/classes/application.properties and adjust as needed"
