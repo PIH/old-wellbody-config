@@ -1,8 +1,17 @@
-# deletes all (known) data elements for a single patient identified by its id
+# deletes all (known) data elements; either for
+# - a single patient identified by its id 
+# - all patients beyond the specified patientid
+# be careful as hard-deleting records can/will lead to inconsistent data exchange with OpenELIS
 	
 set @patientid = 7;
 
+#
+# TODO, get rid of idgen_log_entry entries
+# TODO, additional bahmni tables to take care of?
+#
+	
 # obs
+# TODO: don't think disabling the checks is a good idea...
 SET foreign_key_checks = 0;
 delete from obs where person_id > @patientid and person_id not in (select person_id from users);
 SET foreign_key_checks = 1;
@@ -35,7 +44,3 @@ delete from person_name where person_id > @patientid and person_id not in (selec
 delete from person_attribute where person_id > @patientid and person_id not in (select person_id from users);  
 delete from person_address where person_id > @patientid and person_id not in (select person_id from users);
 delete from person where person_id > @patientid and person_id not in (select person_id from users);
-
-#
-# TODO, get rid of idgen_log_entry entries	
-	
