@@ -3,6 +3,6 @@
         "description": "Bahmni Reports App",
         "extensionPoints": [],
         "config": {
-            "paperSize": "A3"
+            "paperSize": "A4"
         }
 }
