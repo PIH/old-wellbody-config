@@ -1,3 +1,37 @@
+<script>
+//window.onload = wba_demo_print();
+//window.onload =  setTimeout('wba_demo_print()', 100);
+
+function wba_demo_print() 
+{
+	var zpl = "^XA^CI28^PW1300^MTT^FO080,40^AUN^FDtest name^FS^FO080,120^AUN^FDWBA100001^FS^FO080,190^ATN^FD20000101M^FS^FO680,40^FB520,1,0,R,0^AUN,140,110^FD{{patient.identifier}}^FS^FO780,160^ATN^BY4^BCN,150,N^F123456^FS^XZ";
+	print_this(zpl, "192.168.1.11");
+}
+
+function print_this(zpl, ip_addr)
+{
+	var output = document.getElementById("output");
+	var url = "http://"+ip_addr+"/pstprnt";
+	var method = "POST";
+	var async = true;
+	var request = new XMLHttpRequest();
+
+	request.onload = function () {
+		var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+		var data = request.responseText; // Returned data, e.g., an HTML document.
+		output.innerHTML = "Status: " + status + "<br>" + data;
+	}
+
+	request.open(method, url, async);
+	request.setRequestHeader("Content-Length", zpl.length);
+
+	// Actually sends the request to the server.
+	request.send(zpl);
+}
+</script>
+
+<button onclick='wba_demo_print(); return false;'>Print WBA demo</button>
+
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css"/>
 <table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
     <tbody>
