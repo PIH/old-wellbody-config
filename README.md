@@ -5,15 +5,15 @@ Contains relevant customizations of Bahmni for the Wellbody Clinic in Sierra Leo
 In a nutshell the deployment
 - does not make use of the default Bahmni installation process (via its RPM packages)
 - requires a default PIH-EMR server environment (based on Ubuntu)
-- uses 'binary' components (aka archives) of relevant Bahmni components
-- the components can/need to be derived from a 'golden master' installation (either the Bahmni vagrant or docker environment with vagrant being used more recently).
+- uses custom 'binary' components (aka archives) of relevant Bahmni components
+- the components are derived from a 'golden master' installation (either the Bahmni vagrant or docker environment with vagrant being used more recently).
 - has no proper OpenMRS metadata handling; most important it doesn't create a DB instance from scratch, but requires the import of an initial OpenMRS MySQL dump 
 
-The 'binary' components are not part of this github project, but the basic scripts to install a new and update an existing environment are included in the scripts-vagrant folder (the files under scripts-docker is currently not used/well tested).
+The 'binary' components are not part of this github project, but are required for the basic scripts to install a new and update an existing environment are included in the scripts-vagrant folder (the files under scripts-docker is currently not used/well tested).
 
 Content:
-- openmrs-configs: List of all metadata changes for Wellbody (originating from Bahmni's default OpenMRS DB)
-- openmrs: Bahmni apps customization dir
+- openmrs-configs: List of all metadata changes for Wellbody (originating from Bahmni's default OpenMRS DB); can mostly be imported via Bahmni's CSV import capacity
+- openmrs: 'standard' Bahmni apps & customization dir
 - scripts-docker: Scripts to handle docker-based Bahmni installation (currently unmaintained)
 - scripts-vagrant: Scripts for installing/updating Bahmni installation (doesn't not require a 'target' vagrant-based system)
 
@@ -27,7 +27,7 @@ Once the initial installation/preparation is done, continue with the Update proc
 
 # Update process
 
-Once the initial installation is completed, the runtime components of Bahmni can be installed and updated via the script script-vagrant/update.sh. Unlike the above install.sh this script is better tested and used with the current live installation of Bahmni for Wellbody. However it can still make sense for someone doing this for the first time, to look at the script and manually enter the command in a shell to make sure that unwanted sideeffects are avoided and all paths match. Similar to the install.sh it also expects the 'binary' Bahmni components in the folder ~/bahmni-dist (or ~/b).
+Once the initial installation is completed, the runtime components of Bahmni can be installed and updated via the script script-vagrant/update.sh. Unlike the above install.sh this script is better tested and used with the current live installation of Bahmni for Wellbody. However it can still make sense for someone doing this for the first time, to look at the script and manually enter the commands in a shell to make sure that unwanted sideeffects are avoided and all paths match. Similar to the install.sh it also expects the 'binary' Bahmni components in the folder ~/bahmni-dist (or ~/b).
 
 After a successful install and update, Bahmni should be up and running with these components:
 - Bahmni: http:/<server>:/bahmni/home
