@@ -61,10 +61,12 @@
                     "required": true
                 },
                 "Patient category" : {
-                    "required": true
+                    "required": true,
+                    "multiSelect": true
                 },
                 "Type of visit": {
-                    "required": true
+                    "required": true,
+                    "multiSelect": true
                 }
             },
             "fieldValidation" : {
