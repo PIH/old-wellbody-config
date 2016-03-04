@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Intended to set up any users we want to have present in the core installation.
+    These should be retired or have passwords changed as needed after set-up based on the type of environment
+-->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="configure-admin-user" author="PIH" runAlways="true">
+        <comment>Configure admin user with standard password, provider account, and roles, suitable for testing and system administration</comment>
+        <sqlFile splitStatements="false" path="procedures/user-procedures.sql"/>
+        <sql>
+            call ensure_user('admin', 'Super', 'User', 'M', 'e28e3ae84c66bfba6b2c50a406567f3e34fea1d76b17c006931571fe5d940f6c6b81e49cf8ea5e0adfca19fe3beb68d8ad79f7c3812e92b8d502a9afcf2029b2', '1c9d7e94aeeb7a2459ef45ed200b2944582e0e7088d75f9b57a3644861ea766c20a269b3fe2eadaff1bc445ecfbd9bd3c0c550dfd813de48d39423cd3d1a8b10');
+            call ensure_provider('admin', '');
+            call ensure_user_roles('admin', 'Privilege Level: Full,System Developer');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
