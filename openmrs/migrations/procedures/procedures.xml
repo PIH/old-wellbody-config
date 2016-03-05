@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Set up stored procedures for use in configuring the system
+-->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="ensure_user" author="PIH" runAlways="true">
+        <comment>Drop and re-create ensure_user procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_user;</sql>
+        <sqlFile path="ensure_user.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_provider" author="PIH" runAlways="true">
+        <comment>Drop and re-create ensure_provider procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_provider;</sql>
+        <sqlFile path="ensure_provider.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_user_roles" author="PIH" runAlways="true">
+        <comment>Drop and re-create ensure_user_roles procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_user_roles;</sql>
+        <sqlFile path="ensure_user_roles.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>
