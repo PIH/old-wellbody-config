@@ -39,4 +39,10 @@
         </sql>
     </changeSet>
 
+    <changeSet id="configure-anonymous-role" author="PIH" runAlways="true">
+        <sql>
+            call ensure_role_privileges('Anonymous', 'View Locations,Get Locations');
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
