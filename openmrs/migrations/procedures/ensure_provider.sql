@@ -1,5 +1,5 @@
 
-# Ensure a provider account with the given identifier exists for the given user
+-- Ensure a provider account with the given identifier exists for the given user
 
 CREATE PROCEDURE ensure_provider(
   _username            VARCHAR(255),

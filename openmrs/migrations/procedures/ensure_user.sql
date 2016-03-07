@@ -1,4 +1,4 @@
-# Ensure a user account exists with the given attributes
+-- Ensure a user account exists with the given attributes
 
 CREATE PROCEDURE ensure_user (
   _username    VARCHAR(255),
