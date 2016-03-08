@@ -15,5 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   config.vm.host_name = "192.168.33.21"
   config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.provision "shell", path: "setup.sh"
 
 end
