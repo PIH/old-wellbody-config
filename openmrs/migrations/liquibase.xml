@@ -10,4 +10,8 @@
     <include file="procedures/procedures.xml" relativeToChangelogFile="true"/>
     <include file="core-users.xml" relativeToChangelogFile="true"/>
 
+    <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/locations.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
