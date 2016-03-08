@@ -28,4 +28,10 @@
         <sqlFile path="ensure_user_roles.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_role_privilege" author="PIH" runAlways="true">
+        <comment>Drop and re-create ensure_role_privilege procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_role_privilege;</sql>
+        <sqlFile path="ensure_role_privilege.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
