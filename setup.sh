@@ -21,13 +21,14 @@ fi
 echo "Installing distribution into $INSTALL_DIRECTORY "
 rm -fR $INSTALL_DIRECTORY
 mkdir -p $INSTALL_DIRECTORY
-cd $INSTALL_DIRECTORY
 
 echo "Installing Git..."
 yum -y -q install git
 
 echo "Cloning deployment package into $INSTALL_DIRECTORY/deployment"
-git clone https://github.com/PIH/pih-deployment.git deployment
-cd deployment
+git clone https://github.com/PIH/pih-deployment.git $INSTALL_DIRECTORY/deployment
 
-echo "Environment setup complete.  Run '$INSTALL_DIRECTORY/deployment/deploy.sh <implementation_name> <environment_name>' to install Bahmni"
+echo "Setting up bin files"
+ln -s $INSTALL_DIRECTORY/deployment/deploy.sh /usr/local/bin/pihdeploy
+
+echo "Environment setup complete.  Run 'pihdeploy' command to install Bahmni"
