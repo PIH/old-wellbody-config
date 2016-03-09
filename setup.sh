@@ -22,8 +22,9 @@ echo "Installing distribution into $INSTALL_DIRECTORY "
 rm -fR $INSTALL_DIRECTORY
 mkdir -p $INSTALL_DIRECTORY
 
-echo "Installing Git..."
+echo "Installing Dependent Libraries..."
 yum -y -q install git
+yum -y -q install emacs
 
 echo "Cloning deployment package into $INSTALL_DIRECTORY/deployment"
 git clone https://github.com/PIH/pih-deployment.git $INSTALL_DIRECTORY/deployment
