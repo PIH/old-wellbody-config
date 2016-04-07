@@ -3,7 +3,7 @@
     "id": "bahmni.registration",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
-    "label": "Registration",
+    "label": "Registration-Padi",
     "url": "../registration/",
     "icon": "fa-user",
     "order": 1,
