@@ -1,14 +1,15 @@
 {
-  "registration": {
-    "id": "bahmni.registration",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "label": "Registration",
-    "url": "../registration/",
-    "icon": "fa-user",
-    "order": 1,
-    "requiredPrivilege": "app:registration"
-  },
+    "shouldOverRideConfig": true,
+    "bahmni_registration": {
+        "id": "bahmni.registration",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "translationKey": "MODULE_LABEL_REGISTRATION_KEY",
+        "url": "../registration/",
+        "icon": "icon-bahmni-registration",
+        "order": 1,
+        "requiredPrivilege": "app:registration"
+    },
   "programs": {
     "id": "bahmni.programs",
     "extensionPointId": "org.bahmni.home.dashboard",
