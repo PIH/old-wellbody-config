@@ -46,4 +46,10 @@
         <sqlFile path="ensure_location_has_tag.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_global_property" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_global_property procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_global_property;</sql>
+        <sqlFile path="ensure_global_property.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
