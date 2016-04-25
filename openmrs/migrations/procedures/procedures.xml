@@ -52,4 +52,16 @@
         <sqlFile path="ensure_global_property.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_patient_identifier_type" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_patient_identifier_type procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_patient_identifier_type;</sql>
+        <sqlFile path="ensure_patient_identifier_type.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_idgen_identifier_source" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_idgen_identifier_source procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_idgen_identifier_source;</sql>
+        <sqlFile path="ensure_idgen_identifier_source.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
