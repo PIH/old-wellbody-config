@@ -64,4 +64,10 @@
         <sqlFile path="ensure_idgen_identifier_source.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="retire_person_attribute_type" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create retire_person_attribute_type procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS retire_person_attribute_type;</sql>
+        <sqlFile path="retire_person_attribute_type.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>

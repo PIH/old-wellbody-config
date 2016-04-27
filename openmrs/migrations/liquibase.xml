@@ -16,6 +16,9 @@
     <changeSet id="pih-identifiers" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/patient_identifiers.sql" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet id="pih-person-attribute-type" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/person_attribute_types.sql" relativeToChangelogFile="true"/>
+    </changeSet>
     <changeSet id="pih-global-properties" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/global_properties.sql" relativeToChangelogFile="true"/>
     </changeSet>
