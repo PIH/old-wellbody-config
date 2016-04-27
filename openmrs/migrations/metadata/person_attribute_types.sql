@@ -2,8 +2,20 @@
 
 
 -- telephoneNumber
-call ensure_person_attribute_type('Telephone Number', 'Telephone Number', 'java.lang.String', NULL, 0, 1,
+call ensure_person_attribute_type('telephoneNumber', 'Telephone Number', 'java.lang.String', NULL, 1, 1,
     0, NULL, NULL, NULL, 'f5eaf645-4c78-11e5-9192-080027b662ec');
+
+-- Mother's Name
+call ensure_person_attribute_type('primaryRelative', 'Mother\'s Name', 'java.lang.String', NULL, 1, 1,
+    0, NULL, NULL, NULL, 'c1f84df3-3f10-11e4-adec-0800271c1b75');
+
+-- Occupation
+-- call ensure_person_attribute_type('occupation', 'Occupation', 'org.openmrs.Concept', 109, 1, 1,
+--    0, NULL, NULL, NULL, 'c1f7d1f1-3f10-11e4-adec-0800271c1b75');
+
+-- WBA Paper ID
+call ensure_person_attribute_type('WBA Paper ID', 'WBA Paper ID', 'java.lang.String', NULL, 1, 1,
+    0, NULL, NULL, NULL, 'ae859ec2-3ff2-4b0f-b018-abe5ab2ce3c5');
 
 -- givenNameLocal
 call ensure_person_attribute_type('givenNameLocal', 'First name in local language', 'java.lang.String', NULL, 0, 1,
