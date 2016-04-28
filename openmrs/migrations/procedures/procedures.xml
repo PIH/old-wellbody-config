@@ -70,4 +70,16 @@
         <sqlFile path="ensure_person_attribute_type.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_concept" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create concept procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept;</sql>
+        <sqlFile path="ensure_concept.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_concept_answer" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_concept_answer procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept_answer;</sql>
+        <sqlFile path="ensure_concept_answer.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>

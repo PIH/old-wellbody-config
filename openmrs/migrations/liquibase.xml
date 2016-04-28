@@ -10,6 +10,9 @@
     <include file="procedures/procedures.xml" relativeToChangelogFile="true"/>
     <include file="core-users.xml" relativeToChangelogFile="true"/>
 
+    <changeSet id="pih-concepts" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/occupation_coded_question.sql"/>
+    </changeSet>
     <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/locations.sql"/>
     </changeSet>
