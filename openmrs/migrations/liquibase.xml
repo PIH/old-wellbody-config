@@ -22,6 +22,9 @@
     <changeSet id="pih-person-attribute-type" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/person_attribute_types.sql"/>
     </changeSet>
+    <changeSet id="pih-visit-type" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/visits.sql"/>
+    </changeSet>
     <changeSet id="pih-global-properties" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/global_properties.sql"/>
     </changeSet>

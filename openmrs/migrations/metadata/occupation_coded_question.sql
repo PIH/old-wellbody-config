@@ -1,4 +1,4 @@
--- This file is used to set up additional CONCEPT in the system
+-- This file is used to set up Occupation coded question concept
 
 set @concept_id = 0;
 set @answer_concept_id = 0;
