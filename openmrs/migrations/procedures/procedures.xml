@@ -88,4 +88,10 @@
         <sqlFile path="ensure_concept_answer.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_concept_set_members" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_concept_set_members procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept_set_members;</sql>
+        <sqlFile path="ensure_concept_set_members.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>

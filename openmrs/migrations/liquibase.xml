@@ -13,6 +13,12 @@
     <changeSet id="pih-concepts" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/occupation_coded_question.sql"/>
     </changeSet>
+    <changeSet id="pih-fee-information" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/fee_information_concept_set.sql"/>
+    </changeSet>
+    <changeSet id="pih-reason-for-visit" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/reason_for_visit_concept_set.sql"/>
+    </changeSet>
     <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/locations.sql"/>
     </changeSet>
