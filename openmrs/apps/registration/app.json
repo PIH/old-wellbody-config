@@ -17,16 +17,7 @@
             "activeVisitUuid"
         ],
         "config" : {
-            "addressHierarchy": {
-                "showAddressFieldsTopDown": true,
-                "freeTextAddressFields": ["cityVillage", "address1"]
-            },
-            "relationshipTypeMap": {
-                "Doctor":"provider",
-                "Parent":"patient"
-            },
-            "prepopulateFields" : ["Country"], 
-            "autoCompleteFields":["familyName", "caste"],
+            "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "WBA",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
