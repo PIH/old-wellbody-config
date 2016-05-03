@@ -50,22 +50,18 @@
                 }
             ],
             "conceptSetUI": {
-                "REGISTRATION FEES": {
-                    "required": false,
-                    "label": "Fee"
-                },
                 "Payment type": {
-                    "required": true
+                    "required": false
                 },
                 "Payment received": {
-                    "required": true
+                    "required": false
                 },
                 "Patient category" : {
-                    "required": true,
+                    "required": false,
                     "multiSelect": true
                 },
                 "Type of visit": {
-                    "required": true,
+                    "required": false,
                     "multiSelect": true
                 }
             },

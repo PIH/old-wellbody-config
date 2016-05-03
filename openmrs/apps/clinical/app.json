@@ -24,10 +24,6 @@
         ],
         "config" : {
             "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
-            "otherInvestigationsMap": {
-                "Radiology": "Radiology Order",
-                "Endoscopy": "Endoscopy Order"
-            },
             "allowConsultationWhenNoOpenVisit": false,
             "defaultVisitType": "OPD",
             "visitTypeForRetrospectiveEntries": "Special OPD",

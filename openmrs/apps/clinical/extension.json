@@ -15,6 +15,7 @@
       "id": "bahmni.clinical.consultation.vitals",
       "extensionPointId": "org.bahmni.clinical.consultation.board",
       "type": "link",
+      "translationKey": "Vitals",
       "label": "Vitals",
       "url": "concept-set-group/vitals_concept",
       "icon": "icon-user-md",

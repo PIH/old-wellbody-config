@@ -1,14 +1,18 @@
 {
     "general": {
         "dashboardName": "General",
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
                 "name": "patientInformation",
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
                 "displayOrder": 0,
-                "patientAttributes": [],
+                "ageLimit":100,
+                "patientAttributes": ["occupation"],
                 "addressFields": [
                     "address1",
                     "address2",
@@ -54,139 +58,43 @@
                     "showDetailsButton": true
                 }
             },
-            "radiology": {
-                "title": "Radiology",
-                "name": "radiology",
-                "displayOrder": 4
-            },
             "programs": {
                 "title": "Programs",
                 "name": "programs",
                 "displayOrder": 5
             },
             "navigationLinksControl": {
-                "title": "Navigation Links Control",
-                "name": "navigationLinksControl",
-                "displayOrder": 6,
+                "title":"Navigation Links Control",
+                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type": "navigationLinksControl",
+                "displayOrder": 2,
                 "links": [
                     {
-                        "title": "Home Dashboard",
+                        "translationKey":"HOME_DASHBOARD_KEY",
                         "url": "../home/#/dashboard"
                     },
                     {
-                        "title": "Patient Visit Page",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active"
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
+                        "translationKey":"PATIENT_VISIT_PAGE_KEY"
                     },
                     {
-                        "title": "Patient ADT Page",
+                        "translationKey":"PATIENT_ADT_PAGE_KEY",
                         "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
                     },
                     {
-                        "title": "Patient Dashboard",
+                        "translationKey":"PATIENT_DASHBOARD_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
                     },
                     {
-                        "title": "Discharge Summary Page",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                    },
-                    {
-                        "title": "Program Management Page",
+                        "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
                         "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
                     },
                     {
-                        "title": "Consultation",
+                        "translationKey":"CONSULTATION_PAGE_KEY",
+
                         "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ]
-            },
-            "radiologyOrders": {
-                "orderType": "Radiology Order",
-                "name": "ordersControl",
-                "title": "Radiology Orders",
-                "displayOrder": 7,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Summary"
-                    ],
-                    "numberOfVisits": 4
-                }
-            },
-            "pacs": {
-                "orderType": "Radiology Order",
-                "name": "pacsOrders",
-                "title": "Pacs",
-                "displayOrder": 8,
-                "dashboardParams": {
-                    "pacsImageUrl": "http://10.0.0.30:8080/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
-                    "numberOfVisits": 4
-                }
-            },
-            "labOrdersDisplayControl": {
-                "title": "Lab Orders Display Control",
-                "name": "ordersControl",
-                "orderType": "Lab Order",
-                "showDetailsButton": true,
-                "displayOrder": 9,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
-                "allOrdersDetails": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                }
-            },
-            "labResults": {
-                "title": "Lab Results",
-                "name": "labOrders",
-                "displayOrder": 10,
-                "dashboardParams": {
-                    "title": null,
-                    "numberOfVisits": 1,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false,
-                    "initialAccessionCount": 0,
-                    "latestAccessionCount": 1
-                },
-                "allLabDetails": {
-                    "numberOfVisits": 10
-                }
-            },
-            "nutritionalValues": {
-                "title": "Nutritional Values",
-                "name": "vitals",
-                "isObservation": true,
-                "displayOrder": 11,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits": 2,
-                    "scope": "latest",
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
             },
             "vitals": {
                 "title": "Vitals",
@@ -300,7 +208,7 @@
             "visits": {
                 "title": "Visits",
                 "name": "visits",
-                "displayOrder": 17,
+                "displayOrder": 1,
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -342,11 +250,6 @@
                         ]
                     }
                 }
-            },
-            "admissionDetails": {
-                "title": "Admission Details",
-                "name": "admissionDetails",
-                "displayOrder": 19
             }
         }
     },
