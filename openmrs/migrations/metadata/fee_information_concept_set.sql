@@ -22,7 +22,7 @@ call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
 -- Free
 call ensure_concept(@concept_id, 'f13f75dd-0cb5-4627-9bb6-de9409141cba', 'Free','Free', 'N/A', 'Misc', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 2);
 
 
 -- Payment Received Question
@@ -30,7 +30,7 @@ call ensure_concept(@concept_id, '375F6A27-C121-4B17-A549-31E4A46F9702', 'Paymen
 set @parent_concept_id = @concept_id;
 
 -- add Payment Received to the Fee Information set
-call ensure_concept_set_members(@fee_information_concept_id, @parent_concept_id, 1);
+call ensure_concept_set_members(@fee_information_concept_id, @parent_concept_id, 2);
 
 -- Yes
 call ensure_concept(@concept_id, '17BD7650-C745-45BE-880F-FF323880DDF4', 'Yes', 'Yes', 'N/A', 'Misc', false);
@@ -40,4 +40,4 @@ call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
 -- No
 call ensure_concept(@concept_id, '83930A21-C3DD-400C-A24D-91A835D77FFC', 'No','No', 'N/A', 'Misc', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 2);

@@ -12,6 +12,7 @@ CREATE PROCEDURE ensure_person_attribute_type (
   _retired_by       INT(11),  
   _date_retired     DATETIME,
   _retire_reason    VARCHAR(255),
+  _sort_weight      DOUBLE,
   _uuid             CHAR(38)
 )
 BEGIN
@@ -33,6 +34,7 @@ BEGIN
                     `retired_by`,
                     `date_retired`,
                     `retire_reason`,
+                    `sort_weight`,
                     `uuid`)
     VALUES(
                     _name,
@@ -46,6 +48,7 @@ BEGIN
                     _retired_by,
                     _date_retired,
                     _retire_reason,
+                    _sort_weight,
                     _uuid);
 
   ELSE
@@ -58,7 +61,8 @@ BEGIN
         retired = _retired,
         retired_by = _retired_by,
         date_retired = _date_retired,
-        retire_reason = _retire_reason
+        retire_reason = _retire_reason,
+        sort_weight = _sort_weight
     WHERE person_attribute_type_id = _id;
   END IF;
 END;

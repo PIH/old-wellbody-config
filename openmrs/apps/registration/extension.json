@@ -43,17 +43,6 @@
         "order": 1,
         "requiredPrivilege": "RegisterAndConsult"
     },
-    "visitType":{
-        "id": "bahmni.registration.conceptSetGroup.visitType",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Reason for visit",
-            "required":true
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
     "feeInformation":{
         "id": "bahmni.registration.conceptSetGroup.feeInformation",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
@@ -62,7 +51,19 @@
             "conceptName": "Fee Information",
             "required":true
         },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    "visitType":{
+        "id": "bahmni.registration.conceptSetGroup.visitType",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Reason for visit",
+            "required":true
+        },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
     }
+
 }
