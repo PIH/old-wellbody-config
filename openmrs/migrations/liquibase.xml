@@ -19,6 +19,9 @@
     <changeSet id="pih-reason-for-visit" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/reason_for_visit_concept_set.sql"/>
     </changeSet>
+    <changeSet id="pih-vitals" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/vitals.sql"/>
+    </changeSet>
     <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/locations.sql"/>
     </changeSet>

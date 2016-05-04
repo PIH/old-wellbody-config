@@ -1,6 +1,6 @@
 {
     "general":{
-        "title": "General",
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
@@ -29,52 +29,26 @@
                     ],
                     "labConcepts": ""
                 }
-            },
-            "diagnoses":{
-                "type": "diagnosis",
-                "displayOrder": 4,
-                "config": {
-                    "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
-                    "showCertainty": false,
-                    "showOrder": false,
-                    "showDetailsButton": true
-                }
-            },
-            "clinicalNotes":{
-                "type": "observation",
-                "displayOrder": 5,
-                "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
-                "config": {
-                    "conceptNames": [
-                        "History and Examination Notes",
-                        "Discharge Summary",
-                        "Lab Investigation Notes",
-                        "Radiology Notes",
-                        "Other Notes"
-                    ],
-                    "scope": "latest",
-                    "numberOfVisits": "1"
-                }
             }
         }
     },
     "orders":{
-      "title": "Orders",
-      "sections": {
-          "Radiology Orders": {
-              "type": "order",
-              "displayOrder": 0,
-              "title": "Radiology Orders",
-              "config": {
-                  "title": "Radiology Orders",
-                  "name": "ordersControl",
-                  "orderType": "Radiology Order",
-                  "conceptNames": [
-                      "Summary"
-                  ]
-              }
-          }
-      }
+        "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
+        "sections": {
+            "Radiology Orders": {
+                "type": "order",
+                "displayOrder": 0,
+                "translationKey": "Radiology Orders",
+                "config": {
+                    "translationKey": "Radiology Orders",
+                    "name": "ordersControl",
+                    "orderType": "Radiology Order",
+                    "conceptNames": [
+                        "Summary"
+                    ]
+                }
+            }
+        }
 
     }
 }
