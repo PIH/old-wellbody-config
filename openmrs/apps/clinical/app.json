@@ -23,7 +23,7 @@
         "visitUuid"
     ],
     "config": {
-        "showSaveConfirmDialog": "Inactive",
+        "showSaveConfirmDialog": false,
         "diagnosisStatus": "Inactive",
         "program": {
             "patientInformation": {

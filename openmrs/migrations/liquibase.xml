@@ -22,6 +22,12 @@
     <changeSet id="pih-vitals" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/vitals.sql"/>
     </changeSet>
+    <changeSet id="pih-history-and-examination" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/history_and_examination.sql"/>
+    </changeSet>
+    <changeSet id="pih-diagnoses" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/diagnoses.sql"/>
+    </changeSet>
     <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/locations.sql"/>
     </changeSet>

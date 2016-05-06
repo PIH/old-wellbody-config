@@ -17,14 +17,6 @@
                     "countryDistrict"
                 ]
             },
-            "diagnosis": {
-                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "type": "diagnosis",
-                "showCertainty": true,
-                "showOrder": true,
-                "showDetailsButton": true,
-                "displayOrder": 1
-            },
             "disposition": {
                 "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton": true,
@@ -32,10 +24,18 @@
                 "numberOfVisits": 1,
                 "displayOrder": 2
             },
+            "diagnosis": {
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "type": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "showDetailsButton": true,
+                "displayOrder": 3
+            },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
-                "displayOrder": 3,
+                "displayOrder": 4,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 8,
@@ -46,7 +46,7 @@
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                 "type": "vitals",
                 "isObservation": true,
-                "displayOrder": 4,
+                "displayOrder": 5,
                 "dashboardConfig": {
                     "showDetailsButton": true,
                     "conceptNames": [
@@ -72,21 +72,21 @@
                     }
                 }
             },
-            "secondVitals": {
-                "translationKey": "DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "type": "second vitals",
+            "historyAndExaminations": {
+                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                "type": "vitals",
                 "isObservation": true,
-                "displayOrder": 5,
+                "displayOrder": 7,
                 "dashboardConfig": {
                     "showDetailsButton": true,
                     "conceptNames": [
-                        "Second Vitals"
+                        "History and Examination"
                     ],
                     "numberOfVisits": 2
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
-                        "Second Vitals"
+                        "History and Examination"
                     ],
                     "numberOfVisits": 2,
                     "showDetailsButton": true,
@@ -101,7 +101,7 @@
             "navigationLinksControl": {
                 "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type": "navigationLinksControl",
-                "displayOrder": 7,
+                "displayOrder": 8,
                 "links": [
                     {
                         "translationKey": "HOME_DASHBOARD_KEY",
@@ -138,7 +138,7 @@
                 "type": "ordersControl",
                 "orderType": "Lab Order",
                 "showDetailsButton": true,
-                "displayOrder": 8,
+                "displayOrder": 9,
                 "dashboardConfig": {
                     "conceptNames": [
                         "Systolic",
@@ -160,7 +160,7 @@
             "labResults": {
                 "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type": "labOrders",
-                "displayOrder": 9,
+                "displayOrder": 10,
                 "dashboardConfig": {
                     "title": null,
                     "numberOfVisits": 1,
@@ -173,29 +173,7 @@
                 "expandedViewConfig": {
                     "numberOfVisits": 10
                 }
-            },
-            "historyAndExaminations": {
-                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-                "type": "vitals",
-                "isObservation": true,
-                "displayOrder": 10,
-                "dashboardConfig": {
-                    "showDetailsButton": true,
-                    "conceptNames": [
-                        "History and Examination"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "History and Examination"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
             }
-
         }
     },
     "trends": {
@@ -206,16 +184,7 @@
                 "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type": "patientInformation",
                 "patientAttributes": [
-                    "caste",
-                    "class",
-                    "education",
-                    "occupation",
-                    "debt",
-                    "distanceFromCenter",
-                    "isUrban",
-                    "cluster",
-                    "RationCard",
-                    "familyIncome"
+                    "occupation"
                 ],
                 "addressFields": [
                     "address1",
@@ -262,19 +231,6 @@
                     "numberOfVisits": 10
                 },
                 "displayOrder": 3
-            },
-            "diabetes/BloodSugar": {
-                "type": "observationGraph",
-                "title": "Diabetes/Blood Sugar",
-                "config": {
-                    "yAxisConcepts": [
-                        "Blood Sugar Fasting",
-                        "Blood Sugar P.P"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 4
             },
             "observationGraph": {
                 "type": "observationGraph",
