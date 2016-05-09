@@ -44,6 +44,20 @@
     "order": 3,
     "requiredPrivilege": "app:clinical:diagnosisTab"
   },
+  "bahmniClinicalBillingTreatment": {
+    "id": "bahmni.clinical.billing.treatment",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Medications",
+    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
+    "extensionParams":{
+      "tabConfigName": "allMedicationTabConfig"
+    },
+    "url": "treatment",
+    "icon": "fa-user-md",
+    "order": 4,
+    "requiredPrivilege": "app:clinical:consultationTab"
+  },
   "disposition": {
     "id": "bahmni.clinical.consultation.disposition",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
@@ -52,7 +66,7 @@
     "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
     "url": "disposition",
     "icon": "fa-user-md",
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:clinical:dispositionTab"
   },
   "observations": {
@@ -63,7 +77,7 @@
     "translationKey":"OBSERVATIONS_BOARD_LABEL_KEY",
     "url": "concept-set-group/observations",
     "icon": "fa-user-md",
-    "order": 5,
+    "order": 6,
     "requiredPrivilege": "app:clinical:observationTab"
   },
   "bahmniClinicalConsultationOrders": {
@@ -74,7 +88,7 @@
     "translationKey":"ORDERS_BOARD_LABEL_KEY",
     "url": "orders",
     "icon": "icon-user-md",
-    "order": 6,
+    "order": 7,
     "requiredPrivilege": "app:clinical:diagnosisTab"
   },
   "bahmniClinicalPatientsSearchAllActivePatients": {
