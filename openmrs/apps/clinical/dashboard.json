@@ -93,11 +93,6 @@
                     "pivotTable": {}
                 }
             },
-            "programs": {
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type": "programs",
-                "displayOrder": 6
-            },
             "navigationLinksControl": {
                 "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type": "navigationLinksControl",
@@ -243,23 +238,6 @@
                     "numberOfVisits": 10
                 },
                 "displayOrder": 5
-            }
-        }
-    },
-    "patientSummary": {
-        "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "Chronic Treatment Chart": {
-                "displayType": "Full-Page",
-                "title": "Chronic Treatment Chart",
-                "type": "chronicTreatmentChart",
-                "dashboardConfig": {
-                    "drugs": []
-                },
-                "expandedViewConfig": {
-                    "drugs": []
-                }
             }
         }
     }
