@@ -28,6 +28,9 @@
     <changeSet id="pih-diagnoses" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/diagnoses.sql"/>
     </changeSet>
+    <changeSet id="pih-orders" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/orders.sql"/>
+    </changeSet>
     <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/locations.sql"/>
     </changeSet>

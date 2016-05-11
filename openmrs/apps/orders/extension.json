@@ -1,16 +1,16 @@
 {
-	"bahmniClinicalPatientsSearchRadiologyOrderAllPatients":{
-	 "id": "bahmni.clinical.patients.search.RadiologyOrderAllPatients",
+	"bahmniClinicalPatientsSearchLabOrderAllPatients":{
+	 "id": "bahmni.clinical.patients.search.LabOrderAllPatients",
 	 "extensionPointId": "org.bahmni.patient.search",
 	 "type": "config",
 	 "extensionParams": {
 	  "searchHandler": "emrapi.sqlSearch.activePatients",
-	  "display":"Radiology Orders",
-	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Radiology Order",
+	  "display":"Lab Orders",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Lab Order",
 	  "forwardButtonTitle" : "View",
 	  "view":"tabular"
 	 },
-	 "label": "Radiology Order",
+	 "label": "Lab Order",
 	 "order": 1,
 	 "requiredPrivilege": "app:orders"
 	 }

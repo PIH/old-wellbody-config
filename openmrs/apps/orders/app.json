@@ -17,10 +17,10 @@
         }
       },
       "sections": {
-        "title": "Radiology Order FulFillment Form",
-        "name": "Radiology Results",
+        "title": "Lab Order FulFillment Form",
+        "name": "Lab Results",
         "isObservation": true,
-        "conceptNames": ["Radiology Notes"],
+        "conceptNames": ["Lab Order Notes"],
         "numberOfVisits": 2,
         "scope": "latest"
       }

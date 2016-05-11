@@ -111,37 +111,14 @@
                 "displayOrder": 7,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
+                        "Lab Order Fulfillment Form"
                     ]
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
+                        "Lab Order Fulfillment Form"
                     ],
                     "showDetailsButton":true
-                }
-            },
-            "labResults": {
-                "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "type": "labOrders",
-                "displayOrder": 8,
-                "dashboardConfig": {
-                    "title": null,
-                    "numberOfVisits": 1,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false,
-                    "initialAccessionCount": 0,
-                    "latestAccessionCount": 1
-                },
-                "expandedViewConfig": {
-                    "numberOfVisits": 10
                 }
             },
             "navigationLinksControl": {
