@@ -30,7 +30,7 @@ call ensure_concept_set_members(@pulse_data_concept_id, @child_concept_id, 2);
 -- Blood Pressure
 call ensure_concept(@concept_id, 'c36d22e6-3f10-11e4-adec-0800271c1b75', 'Blood Pressure','Blood Pressure', 'N/A', 'ConvSet', true);
 set @blood_pressure_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @blood_pressure_concept_id, 1);
+call ensure_concept_set_members(@vitals_concept_id, @blood_pressure_concept_id, 2);
 
 -- Systolic Data
 call ensure_concept(@concept_id, 'c36ddb6d-3f10-11e4-adec-0800271c1b75', 'Systolic Data','Systolic', 'N/A', 'Concept Details', true);

@@ -25,6 +25,9 @@
     <changeSet id="pih-history-and-examination" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/history_and_examination.sql"/>
     </changeSet>
+    <changeSet id="pih-physical-exam" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/physical_exam.sql"/>
+    </changeSet>
     <changeSet id="pih-diagnoses" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/diagnoses.sql"/>
     </changeSet>
