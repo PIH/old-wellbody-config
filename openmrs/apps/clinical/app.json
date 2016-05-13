@@ -41,7 +41,7 @@
         },
         "allowConsultationWhenNoOpenVisit": false,
         "defaultVisitType": "OPD",
-        "visitTypeForRetrospectiveEntries": "Special OPD",
+        "visitTypeForRetrospectiveEntries": "OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
@@ -65,6 +65,9 @@
                 "grid": true
             },
             "Anaemia, Stopped Since When": {
+                "conciseText": true
+            },
+            "Notes": {
                 "conciseText": true
             },
             "Examination Notes": {
