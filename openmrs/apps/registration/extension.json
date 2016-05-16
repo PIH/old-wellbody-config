@@ -60,7 +60,9 @@
         "type": "config",
         "extensionParams": {
             "conceptName": "Reason for visit",
-            "required":true
+            "conceptNames": ["Patient category", "Type of visit", "Chief complaint"],
+            "required":true,
+            "showLatest": true
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
