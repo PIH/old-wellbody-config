@@ -7,17 +7,12 @@ set @answer_concept_id = 0;
 call ensure_concept(@concept_id, 'A8BD7AE5-9261-4A0C-9BD0-119B2DB43E78', 'Reason for visit','Reason for visit', 'N/A', 'Misc', true);
 set @reason_for_visit_concept_id = @concept_id;
 
--- Patient Category Data
-call ensure_concept(@concept_id, '1B371106-0433-445F-BB05-059E99C9B583', 'Patient category Data','Patient category data', 'N/A', 'Concept Details', true);
-set @patient_category_data_concept_id = @concept_id;
-call ensure_concept_set_members(@reason_for_visit_concept_id, @patient_category_data_concept_id, 1);
-
 -- Patient Category
 call ensure_concept(@concept_id, '97484123-E38C-4B37-A938-6DBB739FAF57', 'Patient category','Patient category', 'Coded', 'Question', false);
 set @parent_concept_id = @concept_id;
 
 -- add Patient Category to the Reason for visit set
-call ensure_concept_set_members(@patient_category_data_concept_id, @parent_concept_id, 1);
+call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 1);
 
 -- A - Amputee
 call ensure_concept(@concept_id, 'FDCCA240-77BE-41E6-B582-1E89BF9F1041', 'A - Amputee','A - Amputee', 'N/A', 'Misc', false);
@@ -94,17 +89,12 @@ call ensure_concept(@concept_id, '3cee7fb4-26fe-102b-80cb-0017a47871b2', 'Other'
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 15);
 
--- Type of visit Data
-call ensure_concept(@concept_id, '3258CC54-8EE4-441A-B907-AD1027760684', 'Type of visit Data','Type of visit data', 'N/A', 'Concept Details', true);
-set @visit_type_data_concept_id = @concept_id;
-call ensure_concept_set_members(@reason_for_visit_concept_id, @visit_type_data_concept_id, 2);
-
 -- Type of Visit Question
 call ensure_concept(@concept_id, '86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346', 'Type of visit','Type of visit', 'Coded', 'Question', false);
 set @parent_concept_id = @concept_id;
 
 -- add Type of Visit to the Reason for visit
-call ensure_concept_set_members(@visit_type_data_concept_id, @parent_concept_id, 1);
+call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 2);
 
 -- ANC
 call ensure_concept(@concept_id, 'cabf0c04-7d4e-4db4-921c-d5ba90f00fc9', 'ANC', 'ANC', 'N/A', 'Misc', false);

@@ -49,13 +49,11 @@
                 },
                 "Patient category" : {
                     "required": false,
-                    "multiSelect": true,
-                    "dropdown": true
+                    "multiSelect": true
                 },
                 "Type of visit": {
                     "required": false,
-                    "multiSelect": true,
-                    "dropdown": true
+                    "multiSelect": true
                 }
             },
             "fieldValidation" : {
