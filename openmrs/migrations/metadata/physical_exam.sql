@@ -12,13 +12,13 @@ set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @physical_exam_concept_id, 3);
 
 -- 1. HEENT
-call ensure_concept(@concept_id, '3cd75b86-26fe-102b-80cb-0017a47871b2', 'HEENT','HEENT', 'N/A', 'ConvSet', true);
-set @heent_concept_id = @concept_id;
-call ensure_concept_set_members(@physical_exam_concept_id, @heent_concept_id, 1);
+call ensure_concept(@concept_id, '41BA03B8-3FFB-4B76-B5C2-168D6E78DF8F', 'Exam','Exam', 'N/A', 'ConvSet', true);
+set @examm_concept_id = @concept_id;
+call ensure_concept_set_members(@physical_exam_concept_id, @examm_concept_id, 1);
 -- HEENT data
-call ensure_concept(@concept_id, '41BA03B8-3FFB-4B76-B5C2-168D6E78DF8F', 'HEENT data','HEENT', 'N/A', 'Concept Details', true);
+call ensure_concept(@concept_id, '3cd75b86-26fe-102b-80cb-0017a47871b2', 'HEENT data','HEENT', 'N/A', 'Concept Details', true);
 set @heent_data_concept_id = @concept_id;
-call ensure_concept_set_members(@heent_concept_id, @heent_data_concept_id, 1);
+call ensure_concept_set_members(@examm_concept_id, @heent_data_concept_id, 1);
 
 -- Status
 call ensure_concept(@concept_id, 'ABB8A739-32CA-436D-B260-0E512A4797EB', 'Status','Status', 'Coded', 'Misc', false);
@@ -32,9 +32,9 @@ call ensure_concept_answer (@status_concept_id, @normal_concept_id, 1);
 call ensure_concept(@concept_id, '3cd75230-26fe-102b-80cb-0017a47871b2', 'Abnormal','Abnormal', 'N/A', 'Misc', false);
 set @abnormal_concept_id = @concept_id;
 call ensure_concept_answer (@status_concept_id, @abnormal_concept_id, 2);
+-- N/A
+call ensure_concept(@concept_id, '313780DC-B884-40A8-B939-DDAD1A5CEE3B', 'Not Applicable','N/A', 'N/A', 'Misc', false);
+set @n_a_concept_id = @concept_id;
+call ensure_concept_answer (@status_concept_id, @n_a_concept_id, 3);
 
--- Notes
-call ensure_concept(@concept_id, 'F3F41736-0FB2-4327-91FF-3730D35AE532', 'Notes','Notes', 'Text', 'Misc', false);
-set @notes_concept_id = @concept_id;
-call ensure_concept_set_members(@heent_data_concept_id, @notes_concept_id, 3);
 
