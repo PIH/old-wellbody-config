@@ -7,12 +7,17 @@ set @answer_concept_id = 0;
 call ensure_concept(@concept_id, 'A8BD7AE5-9261-4A0C-9BD0-119B2DB43E78', 'Reason for visit','Reason for visit', 'Coded', 'Misc', true);
 set @reason_for_visit_concept_id = @concept_id;
 
+-- Reason For Visit data
+call ensure_concept(@concept_id, '2fbb0566-5533-483f-8bc8-5ff8f01ba066', 'Reason for visit data','Reason for visit', 'N/A', 'Concept Details', true);
+set @reason_for_visit_data_concept_id = @concept_id;
+call ensure_concept_set_members(@reason_for_visit_concept_id, @reason_for_visit_data_concept_id, 1);
+
 -- Patient Category
 call ensure_concept(@concept_id, '97484123-E38C-4B37-A938-6DBB739FAF57', 'Patient category','Patient category', 'Coded', 'Question', false);
 set @parent_concept_id = @concept_id;
 
--- add Patient Category to the Reason for visit set
-call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 1);
+-- add Patient Category to the Reason for visit data set
+call ensure_concept_set_members(@reason_for_visit_data_concept_id, @parent_concept_id, 1);
 
 -- A - Amputee
 call ensure_concept(@concept_id, 'FDCCA240-77BE-41E6-B582-1E89BF9F1041', 'A - Amputee','A - Amputee', 'N/A', 'Misc', false);
@@ -95,7 +100,7 @@ call ensure_concept(@concept_id, '86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346', 'Type o
 set @parent_concept_id = @concept_id;
 
 -- add Type of Visit to the Reason for visit
-call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 2);
+call ensure_concept_set_members(@reason_for_visit_data_concept_id, @parent_concept_id, 2);
 
 -- ANC
 call ensure_concept(@concept_id, 'cabf0c04-7d4e-4db4-921c-d5ba90f00fc9', 'ANC', 'ANC', 'N/A', 'Misc', false);
