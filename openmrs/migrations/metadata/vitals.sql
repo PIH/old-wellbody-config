@@ -25,7 +25,7 @@ call ensure_concept_set_members(@temp_concept_id, @temp_data_concept_id, 1);
 call ensure_concept(@concept_id, '3ce939d2-26fe-102b-80cb-0017a47871b2', 'Temperature','Temperature', 'Numeric', 'Misc', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@temp_data_concept_id, @child_concept_id, 1);
-call ensure_concept_numeric(@child_concept_id, NULL, NULL, 98.8, NULL, NULL, 98.4, 'C', 0, NULL);
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, 37.2, NULL, NULL, 36.5, 'C', 0, NULL);
 
 -- Temperature Abnormal
 call ensure_concept(@concept_id, 'c37c942d-3f10-11e4-adec-0800271c1b75', 'Temperature Abnormal','Temperature Abnormal', 'Boolean', 'Abnormal', false);
@@ -161,7 +161,7 @@ call ensure_concept_set_members(@weight_concept_id, @weight_data_concept_id, 1);
 call ensure_concept(@concept_id, '3ce93b62-26fe-102b-80cb-0017a47871b2', 'Weight','Weight', 'Numeric', 'Misc', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@weight_data_concept_id, @child_concept_id, 1);
-call ensure_concept_numeric(@child_concept_id, NULL, NULL, 300, NULL, NULL, NULL, 'kg', 0, NULL);
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, 140, NULL, NULL, NULL, 'kg', 0, NULL);
 
 -- Weight Abnormal
 call ensure_concept(@concept_id, '74c42c16-a8f9-4ce7-80ad-a0ec0184df6f', 'Weight Abnormal','Weight Abnormal', 'Boolean', 'Abnormal', false);
