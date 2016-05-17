@@ -19,7 +19,7 @@ call ensure_concept_set_members(@vitals_concept_id, @temp_concept_id, 1);
 -- Temperature Data
 call ensure_concept(@concept_id, 'c37afa71-3f10-11e4-adec-0800271c1b75', 'Temperature Data','Temperature', 'N/A', 'Concept Details', true);
 set @temp_data_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @temp_data_concept_id, 1);
+call ensure_concept_set_members(@temp_concept_id, @temp_data_concept_id, 1);
 
 -- Temperature
 call ensure_concept(@concept_id, '3ce939d2-26fe-102b-80cb-0017a47871b2', 'Temperature','Temperature', 'Numeric', 'Misc', false);
