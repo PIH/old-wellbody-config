@@ -11,7 +11,7 @@ call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Ob
 set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @vitals_concept_id, 1);
 
- Temperature Construct
+-- Temperature Construct
 call ensure_concept(@concept_id, '85bfd9d5-0c3c-4e78-b55f-8467d34c005a', 'Temperature','Temperature', 'N/A', 'ConvSet', true);
 set @temp_concept_id = @concept_id;
 call ensure_concept_set_members(@vitals_concept_id, @temp_concept_id, 1);
