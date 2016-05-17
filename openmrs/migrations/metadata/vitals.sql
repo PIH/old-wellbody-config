@@ -188,3 +188,32 @@ call ensure_concept(@concept_id, '74c42c16-a8f9-4ce7-80ad-a0ec0184df6f', 'Weight
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@weight_data_concept_id, @child_concept_id, 2);
 
+-- Level of Consciousness Set
+call ensure_concept(@concept_id, '9d66a223-faa4-4ec5-9e6b-eb16c7b6bc8a', 'Consciousness Set','Consciousness', 'N/A', 'ConvSet', true);
+set @consciousset_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @consciousset_concept_id, 7);
+
+--  Level of Consciousness
+call ensure_concept(@concept_id, '1b2af18b-5d68-4bff-807e-85fa5025d8ca', 'Level of Consciousness','Level of Consciousness', 'Coded', 'Test', false);
+set @conscious_concept_id = @concept_id;
+call ensure_concept_set_members(@consciousset_concept_id, @conscious_concept_id, 1);
+
+-- Alert
+call ensure_concept(@concept_id, '9241fba9-0339-4f8f-8137-f0292253c3ca', 'Alert','Alert', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 1);
+
+-- Responsive to Voice
+call ensure_concept(@concept_id, 'd14ed34c-5a76-4524-a8a5-70a059f248d4', 'Responsive to Voice','Responsive to Voice', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 2);
+
+-- Responsive to Pain
+call ensure_concept(@concept_id, '7126c120-5a50-41d0-bf4e-98c42710ae67', 'Responsive to Pain','Responsive to Pain', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 3);
+
+-- Unresponsive
+call ensure_concept(@concept_id, '49fdb229-6669-44ae-be58-4192eb7a06ed', 'Unresponsive','Unresponsive', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 4);
