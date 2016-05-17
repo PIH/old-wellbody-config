@@ -35,7 +35,7 @@ call ensure_concept_set_members(@temp_data_concept_id, @child_concept_id, 2);
 -- Pulse
 call ensure_concept(@concept_id, 'C485C3CF-4BEA-4389-A9C8-20111F66EAC2', 'Pulse','Pulse', 'N/A', 'ConvSet', true);
 set @pulse_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @pulse_concept_id, 1);
+call ensure_concept_set_members(@vitals_concept_id, @pulse_concept_id, 3);
 
 -- Pulse Data
 call ensure_concept(@concept_id, '3ce93824-26fe-102b-80cb-0017a47871b2', 'Pulse Data','Pulse', 'N/A', 'Concept Details', true);
