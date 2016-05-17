@@ -111,7 +111,7 @@ set @rr_concept_id = @concept_id;
 call ensure_concept_set_members(@vitals_concept_id, @rr_concept_id, 4);
 
 --  Respiratory Rate Data
-call ensure_concept(@concept_id, '1ed7b7d0-b09d-4b24-8f27-22c816c5ac06', 'Respiratory Rate Data','Respiratory Rate Data', 'N/A', 'Concept Details', true);
+call ensure_concept(@concept_id, '1ed7b7d0-b09d-4b24-8f27-22c816c5ac06', 'Respiratory Rate Data','Respiratory Rate', 'N/A', 'Concept Details', true);
 set @rr_data_concept_id = @concept_id;
 call ensure_concept_set_members(@rr_concept_id, @rr_data_concept_id, 1);
 
@@ -132,7 +132,7 @@ set @oxygen_concept_id = @concept_id;
 call ensure_concept_set_members(@vitals_concept_id, @oxygen_concept_id, 5);
 
 --  Blood Oxygen Data
-call ensure_concept(@concept_id, 'd4aaacd9-de67-4187-be85-849e303a3363', 'Oxygen Saturation Data','Oxygen Saturation Data', 'N/A', 'Concept Details', true);
+call ensure_concept(@concept_id, 'd4aaacd9-de67-4187-be85-849e303a3363', 'Oxygen Saturation Data','Oxygen Saturation', 'N/A', 'Concept Details', true);
 set @oxygen_data_concept_id = @concept_id;
 call ensure_concept_set_members(@oxygen_concept_id, @oxygen_data_concept_id, 1);
 
@@ -153,7 +153,7 @@ set @weight_concept_id = @concept_id;
 call ensure_concept_set_members(@vitals_concept_id, @weight_concept_id, 6);
 
 --  Weight Data
-call ensure_concept(@concept_id, '7d308557-5cb9-4bc4-9827-2d55dc8edfd6', 'Weight Data','Weight Data', 'N/A', 'Concept Details', true);
+call ensure_concept(@concept_id, '7d308557-5cb9-4bc4-9827-2d55dc8edfd6', 'Weight Data','Weight', 'N/A', 'Concept Details', true);
 set @weight_data_concept_id = @concept_id;
 call ensure_concept_set_members(@weight_concept_id, @weight_data_concept_id, 1);
 
