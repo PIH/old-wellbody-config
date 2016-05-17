@@ -11,6 +11,27 @@ call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Ob
 set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @vitals_concept_id, 1);
 
+ Temperature Construct
+call ensure_concept(@concept_id, '85bfd9d5-0c3c-4e78-b55f-8467d34c005a', 'Temperature','Temperature', 'N/A', 'ConvSet', true);
+set @temp_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @temp_concept_id, 1);
+
+-- Temperature Data
+call ensure_concept(@concept_id, 'c37afa71-3f10-11e4-adec-0800271c1b75', 'Temperature Data','Temperature', 'N/A', 'Concept Details', true);
+set @temp_data_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @temp_data_concept_id, 1);
+
+-- Temperature
+call ensure_concept(@concept_id, '3ce939d2-26fe-102b-80cb-0017a47871b2', 'Temperature','Temperature', 'Numeric', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@temp_data_concept_id, @child_concept_id, 1);
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, 98.8, NULL, NULL, 98.4, 'C', 0, NULL);
+
+-- Temperature Abnormal
+call ensure_concept(@concept_id, 'c37c942d-3f10-11e4-adec-0800271c1b75', 'Temperature Abnormal','Temperature Abnormal', 'Boolean', 'Abnormal', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@temp_data_concept_id, @child_concept_id, 2);
+
 -- Pulse
 call ensure_concept(@concept_id, 'C485C3CF-4BEA-4389-A9C8-20111F66EAC2', 'Pulse','Pulse', 'N/A', 'ConvSet', true);
 set @pulse_concept_id = @concept_id;
