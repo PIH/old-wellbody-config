@@ -11,10 +11,30 @@ call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Ob
 set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @vitals_concept_id, 1);
 
+-- Mobility Set
+call ensure_concept(@concept_id, '1d357420-3821-49a2-b3cc-5adba3dc5880', Mobility Set','Mobility', 'N/A', 'ConvSet', true);
+set @mobilityset_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @mobilityset_concept_id, 1);
+
+--  Mobility
+call ensure_concept(@concept_id, 'b6fb4a78-2e18-4a32-b76b-7c81c697c94b', 'Mobility','Mobility', 'Coded', 'Test', false);
+set @mobility_concept_id = @concept_id;
+call ensure_concept_set_members(@mobilityset_concept_id, @mobility_concept_id, 1);
+
+-- Walks Alone
+call ensure_concept(@concept_id, '9483f7e8-711f-4e72-af56-a1c18e0928eb', 'Walks Alone','Walks Alone', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@mobility_concept_id, @child_concept_id, 1);
+
+-- Walks With Assistance
+call ensure_concept(@concept_id, '13c89f21-dfc4-4a4e-8dea-1864eef5625e', 'Walks With Assistance','Walks With Assistance', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@mobility_concept_id, @child_concept_id, 2);
+
 -- Temperature Set
 call ensure_concept(@concept_id, '85bfd9d5-0c3c-4e78-b55f-8467d34c005a', 'Temperature Set','Temperature', 'N/A', 'ConvSet', true);
 set @temp_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @temp_concept_id, 1);
+call ensure_concept_set_members(@vitals_concept_id, @temp_concept_id, 2);
 
 -- Temperature Data
 call ensure_concept(@concept_id, 'c37afa71-3f10-11e4-adec-0800271c1b75', 'Temperature Data','Temperature', 'N/A', 'Concept Details', true);
@@ -35,7 +55,7 @@ call ensure_concept_set_members(@temp_data_concept_id, @child_concept_id, 2);
 -- Pulse Set
 call ensure_concept(@concept_id, 'C485C3CF-4BEA-4389-A9C8-20111F66EAC2', 'Pulse Set','Pulse', 'N/A', 'ConvSet', true);
 set @pulse_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @pulse_concept_id, 3);
+call ensure_concept_set_members(@vitals_concept_id, @pulse_concept_id, 4);
 
 -- Pulse Data
 call ensure_concept(@concept_id, '3ce93824-26fe-102b-80cb-0017a47871b2', 'Pulse Data','Pulse', 'N/A', 'Concept Details', true);
@@ -56,7 +76,7 @@ call ensure_concept_set_members(@pulse_data_concept_id, @child_concept_id, 2);
 -- Blood Pressure Set
 call ensure_concept(@concept_id, 'c36d22e6-3f10-11e4-adec-0800271c1b75', 'Blood Pressure Set','Blood Pressure', 'N/A', 'ConvSet', true);
 set @blood_pressure_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @blood_pressure_concept_id, 2);
+call ensure_concept_set_members(@vitals_concept_id, @blood_pressure_concept_id, 3);
 
 -- Systolic Data
 call ensure_concept(@concept_id, 'c36ddb6d-3f10-11e4-adec-0800271c1b75', 'Systolic Data','Systolic', 'N/A', 'Concept Details', true);
@@ -108,7 +128,7 @@ call ensure_concept_answer (@posture_concept_id, @child_concept_id, 2);
 -- Respiratory Rate Set
 call ensure_concept(@concept_id, '00ca72e2-cc86-4d36-aeb1-b90f803f6c9c', 'Respiratory Rate Set','Respiratory Rate', 'N/A', 'ConvSet', true);
 set @rr_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @rr_concept_id, 4);
+call ensure_concept_set_members(@vitals_concept_id, @rr_concept_id, 5);
 
 --  Respiratory Rate Data
 call ensure_concept(@concept_id, '1ed7b7d0-b09d-4b24-8f27-22c816c5ac06', 'Respiratory Rate Data','Respiratory Rate', 'N/A', 'Concept Details', true);
@@ -129,7 +149,7 @@ call ensure_concept_set_members(@rr_data_concept_id, @child_concept_id, 2);
 -- Blood Oxygen Set
 call ensure_concept(@concept_id, '54cf74db-fad6-4a7d-bfe2-750424727f90', 'Blood Oxygen Set','Blood Oxygen', 'N/A', 'ConvSet', true);
 set @oxygen_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @oxygen_concept_id, 5);
+call ensure_concept_set_members(@vitals_concept_id, @oxygen_concept_id, 6);
 
 --  Blood Oxygen Data
 call ensure_concept(@concept_id, 'd4aaacd9-de67-4187-be85-849e303a3363', 'Oxygen Saturation Data','Oxygen Saturation', 'N/A', 'Concept Details', true);
@@ -150,7 +170,7 @@ call ensure_concept_set_members(@oxygen_data_concept_id, @child_concept_id, 2);
 -- Weight Set
 call ensure_concept(@concept_id, '7d52a2de-080a-43be-858a-377ebffacb34', 'Weight Set','Weight', 'N/A', 'ConvSet', true);
 set @weight_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @weight_concept_id, 6);
+call ensure_concept_set_members(@vitals_concept_id, @weight_concept_id, 7);
 
 --  Weight Data
 call ensure_concept(@concept_id, '7d308557-5cb9-4bc4-9827-2d55dc8edfd6', 'Weight Data','Weight', 'N/A', 'Concept Details', true);
