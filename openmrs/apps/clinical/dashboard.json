@@ -47,8 +47,7 @@
                         "numberOfVisits": "10",
                         "groupBy": "encounters",
                         "obsConcepts": [
-                            "Weight",
-                            "Vitals"
+                         "Vitals"
                         ],
                         "drugConcepts": [],
                         "labConcepts": []
