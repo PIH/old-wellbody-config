@@ -12,7 +12,7 @@ set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @vitals_concept_id, 1);
 
 -- Mobility Set
-call ensure_concept(@concept_id, '1d357420-3821-49a2-b3cc-5adba3dc5880', Mobility Set','Mobility', 'N/A', 'ConvSet', true);
+call ensure_concept(@concept_id, '1d357420-3821-49a2-b3cc-5adba3dc5880', 'Mobility Set','Mobility', 'N/A', 'ConvSet', true);
 set @mobilityset_concept_id = @concept_id;
 call ensure_concept_set_members(@vitals_concept_id, @mobilityset_concept_id, 1);
 
