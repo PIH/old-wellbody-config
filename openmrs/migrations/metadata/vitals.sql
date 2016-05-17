@@ -105,4 +105,66 @@ call ensure_concept(@concept_id, 'c44d6b8e-3f10-11e4-adec-0800271c1b75', 'Supine
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@posture_concept_id, @child_concept_id, 2);
 
+-- Respiratory Rate Construct
+call ensure_concept(@concept_id, '00ca72e2-cc86-4d36-aeb1-b90f803f6c9c', 'Respiratory Rate','Respiratory Rate', 'N/A', 'ConvSet', true);
+set @rr_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @rr_concept_id, 4);
+
+--  Respiratory Rate Data
+call ensure_concept(@concept_id, '1ed7b7d0-b09d-4b24-8f27-22c816c5ac06', 'Respiratory Rate Data','Respiratory Rate Data', 'N/A', 'Concept Details', true);
+set @rr_data_concept_id = @concept_id;
+call ensure_concept_set_members(@rr_concept_id, @rr_data_concept_id, 1);
+
+--  Respiratory Rate 
+call ensure_concept(@concept_id, '3ceb11f8-26fe-102b-80cb-0017a47871b2', 'Respiratory Rate','Respiratory Rate', 'Numeric', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@rr_data_concept_id, @child_concept_id, 1);
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, 18, NULL, NULL, 12, '/min', 0, NULL);
+
+-- Respiratory Rate Abnormal
+call ensure_concept(@concept_id, 'ab33bc98-ac76-4c5d-8c51-579dc06ce657', 'Respiratory Rate Abnormal','Respiratory Rate Abnormal', 'Boolean', 'Abnormal', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@rr_data_concept_id, @child_concept_id, 2);
+
+-- Blood Oxygen Construct
+call ensure_concept(@concept_id, '54cf74db-fad6-4a7d-bfe2-750424727f90', 'Blood Oxygen','Blood Oxygen', 'N/A', 'ConvSet', true);
+set @oxygen_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @oxygen_concept_id, 5);
+
+--  Blood Oxygen Data
+call ensure_concept(@concept_id, 'd4aaacd9-de67-4187-be85-849e303a3363', 'Oxygen Saturation Data','Oxygen Saturation Data', 'N/A', 'Concept Details', true);
+set @oxygen_data_concept_id = @concept_id;
+call ensure_concept_set_members(@oxygen_concept_id, @oxygen_data_concept_id, 1);
+
+--  Oxygen Saturation
+call ensure_concept(@concept_id, '075c2485-ea84-4e3b-8df8-638ef18edf41', 'Oxygen Saturation','Oxygen Saturation', 'Numeric', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@oxygen_data_concept_id, @child_concept_id, 1);
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, 100, NULL, NULL, 97, '%', 0, NULL);
+
+-- Oxygen Saturation Abnormal
+call ensure_concept(@concept_id, '2cf2580f-ab29-4f58-951b-8dd2613ce091', 'Oxygen Saturation Abnormal','Oxygen Saturation Abnormal', 'Boolean', 'Abnormal', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@oxygen_data_concept_id, @child_concept_id, 2);
+
+-- Weight Construct
+call ensure_concept(@concept_id, '7d52a2de-080a-43be-858a-377ebffacb34', 'Weight','Weight', 'N/A', 'ConvSet', true);
+set @weight_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @weight_concept_id, 6);
+
+--  Weight Data
+call ensure_concept(@concept_id, '7d308557-5cb9-4bc4-9827-2d55dc8edfd6', 'Weight Data','Weight Data', 'N/A', 'Concept Details', true);
+set @weight_data_concept_id = @concept_id;
+call ensure_concept_set_members(@weight_concept_id, @weight_data_concept_id, 1);
+
+--  Weight
+call ensure_concept(@concept_id, '3ce93b62-26fe-102b-80cb-0017a47871b2', 'Weight','Weight', 'Numeric', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@weight_data_concept_id, @child_concept_id, 1);
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, 300, NULL, NULL, NULL, 'kg', 0, NULL);
+
+-- Weight Abnormal
+call ensure_concept(@concept_id, '74c42c16-a8f9-4ce7-80ad-a0ec0184df6f', 'Weight Abnormal','Weight Abnormal', 'Boolean', 'Abnormal', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@weight_data_concept_id, @child_concept_id, 2);
 
