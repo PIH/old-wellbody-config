@@ -5,9 +5,8 @@
     "type": "config",
     "extensionParams": {
       "conceptName": "Vitals",
-      "default": true
+      "alwaysShow": true
     },
-    "default": true,
     "order": 1,
     "requiredPrivilege": "app:clinical"
   },
@@ -18,13 +17,13 @@
     "label": "Vitals",
     "url": "concept-set-group/Vitals_concept",
     "icon": "icon-user-md",
-    "default": true,
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
   },
   "observations": {
     "id": "bahmni.clinical.consultation.observations",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "default": true,
     "type": "link",
     "label": "Consultation",
     "translationKey":"CONSULTATION_BOARD_LABEL_KEY",

@@ -52,6 +52,9 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+            "Vitals": {
+                "alwaysShow": true
+            },
             "Posture": {
                 "buttonSelect": true
             },

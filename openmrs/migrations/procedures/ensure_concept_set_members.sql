@@ -9,6 +9,7 @@ BEGIN
 
     IF ( _concept_set_id IS NULL ) THEN
 	    INSERT INTO concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid) values (_member_concept_id, _set_concept_id, _sort_weight, 1, now(), uuid());
-
+	ELSE
+	    UPDATE concept_set SET sort_weight = _sort_weight where concept_set_id = _concept_set_id;
 	END IF;
 END;

@@ -9,7 +9,7 @@ set @h_e_concept_id = @concept_id;
 -- Add "History and Examination" to "All Observation Templates" concept set
 call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Observation Templates','All Observation Templates', 'N/A', 'ConvSet', true);
 set @obs_templates_concept_id = @concept_id;
-call ensure_concept_set_members(@obs_templates_concept_id, @h_e_concept_id, 1);
+call ensure_concept_set_members(@obs_templates_concept_id, @h_e_concept_id, 4);
 
 -- Chief Complaint Data
 call ensure_concept(@concept_id, 'c3949eb6-3f10-11e4-adec-0800271c1b75', 'Chief Complaint Data','Chief Complaint', 'N/A', 'Concept Details', true);

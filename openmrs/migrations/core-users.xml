@@ -19,6 +19,17 @@
         </sql>
     </changeSet>
 
+    <changeSet id="pih-configure-test-user" author="PIH" runAlways="true">
+        <sql>
+            call ensure_user('ddesimone', 'David', 'Desimone', 'M', '59d4602ec21ab4fb5212d65c0c4e218235ab988728054fde33ff80018369ccfe706d0d2eaea3c651d84c5a00ca7f8d9a72dad7cf2cd95bd11604ecdf68d44394', 'e5e9a3b7c84234a204a22ba2c75d688385f473835f665f0407a5732777ca7814b501c388af8bffadc41392cae4171f34fe933a39191351bb22cce014c7d77066');
+            call ensure_provider('ddesimone', '');
+            call ensure_user_roles('ddesimone', 'Privilege Level: Full,System Developer');
+            call ensure_user('test', 'Test', 'Bahmni', 'M', '62e82a128c5ed599abcf71819df84068eb9f9721a2cf7c1ec724cfcf34df0ae2bbb3b9346a6a608c4ed66b75c855aa3951e280d0fa88f1d729f4fdc2ede7f2a', 'b646fae3f73f09de3bdbc0db003d911cbbff27786ff2b0be8d1749bca41ab354a6a8ab4c4856c221efde39e47ac9d386862629ee0def1a14005fcf49adfce705');
+            call ensure_provider('test', '');
+            call ensure_user_roles('test', 'Privilege Level: Full,System Developer');
+        </sql>
+    </changeSet>
+
     <changeSet id="pih-configure-daemon-user" author="PIH" runAlways="true">
         <sql>
             call ensure_user('daemon', 'Super', 'User', 'M', '', '');
