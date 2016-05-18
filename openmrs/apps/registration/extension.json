@@ -28,7 +28,7 @@
         "label": "View",
         "url": "/patient/{{patientUuid}}",
         "icon": "fa-patient-edit",
-        "order": 1,
+        "order": 3,
         "requiredPrivilege": "Edit Patients"
     },
     "enterConsultation":{

@@ -11,7 +11,7 @@ call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Ob
 set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @physical_exam_concept_id, 3);
 
--- 1. HEENT
+-- 1. Exam ConvSet
 call ensure_concept(@concept_id, '41BA03B8-3FFB-4B76-B5C2-168D6E78DF8F', 'Exam','Exam', 'N/A', 'ConvSet', true);
 set @examm_concept_id = @concept_id;
 call ensure_concept_set_members(@physical_exam_concept_id, @examm_concept_id, 1);
