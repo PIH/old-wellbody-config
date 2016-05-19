@@ -10,7 +10,7 @@ call ensure_concept(@concept_id, '3cd97286-26fe-102b-80cb-0017a47871b2', 'Occupa
 set @parent_concept_id = @concept_id;
 
 -- Occupation Person Attribute Type
-call ensure_person_attribute_type('occupation', 'Occupation', 'org.openmrs.Concept', @parent_concept_id, 1, 1, 0, NULL, NULL, NULL, 4, 'c1f7d1f1-3f10-11e4-adec-0800271c1b75');
+call ensure_person_attribute_type('occupation', 'Occupation', 'org.openmrs.Concept', @parent_concept_id, 1, 1, 0, NULL, NULL, NULL, 5, 'c1f7d1f1-3f10-11e4-adec-0800271c1b75');
 
 
 -- Commercial bike rider

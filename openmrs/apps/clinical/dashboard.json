@@ -134,10 +134,6 @@
                         "translationKey": "PATIENT_VISIT_PAGE_KEY"
                     },
                     {
-                        "translationKey": "PATIENT_DASHBOARD_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
-                    },
-                    {
                         "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
                         "url": "../orders/#/patient/{{patientUuid}}/fulfillment/Lab%20Order"
                     },
