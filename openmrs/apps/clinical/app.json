@@ -58,6 +58,9 @@
             "Posture": {
                 "buttonSelect": true
             },
+            "TB Screening answer" : {
+                "multiSelect": true
+            },
             "P/A Presenting Part": {
                 "multiSelect": true
             },
