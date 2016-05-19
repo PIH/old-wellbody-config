@@ -31,6 +31,9 @@
     <changeSet id="pih-screening" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/screening.sql"/>
     </changeSet>
+    <changeSet id="pih-history-form" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/history_form.sql"/>
+    </changeSet>
     <changeSet id="pih-diagnoses" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/diagnoses.sql"/>
     </changeSet>
