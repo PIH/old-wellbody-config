@@ -31,6 +31,11 @@ call ensure_concept(@concept_id, '13c89f21-dfc4-4a4e-8dea-1864eef5625e', 'Walks 
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@mobility_concept_id, @child_concept_id, 2);
 
+-- Stretcher/Wheelchair
+call ensure_concept(@concept_id, '2435f63b-a063-4142-8d6c-0d1b97189d76', 'Stretcher/Wheelchair','Stretcher/Wheelchair', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@mobility_concept_id, @child_concept_id, 3);
+
 -- Temperature Set
 call ensure_concept(@concept_id, '85bfd9d5-0c3c-4e78-b55f-8467d34c005a', 'Temperature Set','Temperature', 'N/A', 'ConvSet', true);
 set @temp_concept_id = @concept_id;
@@ -202,3 +207,8 @@ call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 3);
 call ensure_concept(@concept_id, '49fdb229-6669-44ae-be58-4192eb7a06ed', 'Unresponsive','Unresponsive', 'N/A', 'Misc', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 4);
+
+-- Confusion
+call ensure_concept(@concept_id, '3cf27e66-26fe-102b-80cb-0017a47871b2', 'Confusion','Confusion', 'N/A', 'Misc', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 5);
