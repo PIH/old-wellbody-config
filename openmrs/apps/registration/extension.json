@@ -54,16 +54,38 @@
         "order": 1,
         "requiredPrivilege": "Edit Visits"
     },
-    "visitType":{
-        "id": "bahmni.registration.conceptSetGroup.visitType",
+    "patientCategory":{
+        "id": "bahmni.registration.conceptSetGroup.patientCategory",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Reason for visit",
+            "conceptName": "Patient category construct",
             "required":true
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
-    }
+    },
+    "typeVisit":{
+        "id": "bahmni.registration.conceptSetGroup.typeVisit",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Type of visit construct",
+            "required":true
+        },
+        "order": 3,
+        "requiredPrivilege": "Edit Visits"
+    },
+    "visitChiefComplaint":{
+        "id": "bahmni.registration.conceptSetGroup.visitChiefComplaint",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Chief complaint construct",
+            "required":true
+        },
+        "order": 4,
+        "requiredPrivilege": "Edit Visits"
+}
 
 }

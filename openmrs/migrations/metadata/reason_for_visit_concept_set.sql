@@ -7,12 +7,15 @@ set @answer_concept_id = 0;
 call ensure_concept(@concept_id, 'A8BD7AE5-9261-4A0C-9BD0-119B2DB43E78', 'Reason for visit','Reason for visit', 'N/A', 'Misc', true);
 set @reason_for_visit_concept_id = @concept_id;
 
+-- Patient Category Construct
+call ensure_concept(@concept_id, '93549133-4b58-4c46-b2fd-166295df62ba', 'Patient category construct','Patient category', 'N/A', 'Misc', true);
+set @category_construct_concept_id = @concept_id;
+
 -- Patient Category
 call ensure_concept(@concept_id, '97484123-E38C-4B37-A938-6DBB739FAF57', 'Patient category','Patient category', 'Coded', 'Question', false);
 set @parent_concept_id = @concept_id;
-
--- add Patient Category to the Reason for visit set
-call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 1);
+-- add Patient Category to the Patient Category Construct
+call ensure_concept_set_members(@category_construct_concept_id, @parent_concept_id, 1);
 
 -- A - Amputee
 call ensure_concept(@concept_id, 'FDCCA240-77BE-41E6-B582-1E89BF9F1041', 'A - Amputee','A - Amputee', 'N/A', 'Misc', false);
@@ -89,12 +92,14 @@ call ensure_concept(@concept_id, '3cee7fb4-26fe-102b-80cb-0017a47871b2', 'Other'
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 15);
 
+-- Type of Visit Construct
+call ensure_concept(@concept_id, '09d68a0e-c4ef-4dee-bb7d-2833c98f5c36', 'Type of visit construct','Type of visit', 'N/A', 'Misc', true);
+set @visit_construct_concept_id = @concept_id;
 -- Type of Visit Question
 call ensure_concept(@concept_id, '86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346', 'Type of visit','Type of visit', 'Coded', 'Question', false);
 set @parent_concept_id = @concept_id;
-
--- add Type of Visit to the Reason for visit
-call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 2);
+-- add Type of Visit to the Type of Visit Construct
+call ensure_concept_set_members(@visit_construct_concept_id, @parent_concept_id, 1);
 
 -- ANC
 call ensure_concept(@concept_id, 'cabf0c04-7d4e-4db4-921c-d5ba90f00fc9', 'ANC', 'ANC', 'N/A', 'Misc', false);
@@ -151,9 +156,11 @@ call ensure_concept(@concept_id, '19b6e33c-a6cc-4b0e-9ad1-aa42062500e4', 'TB', '
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 11);
 
+-- Chief complaint Construct
+call ensure_concept(@concept_id, 'AA0705F2-4B6D-453E-9B0B-832AF8D93A21', 'Chief complaint construct','Chief complaint', 'N/A', 'Misc', true);
+set @chief_construct_concept_id = @concept_id;
 -- Chief complaint
 call ensure_concept(@concept_id, '160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 'Chief complaint','Chief complaint', 'Text', 'Misc', false);
 set @parent_concept_id = @concept_id;
-
--- add Chief complaint to the Reason for visit
-call ensure_concept_set_members(@reason_for_visit_concept_id, @parent_concept_id, 3);
+-- add Chief complaint to the Chief complaint Construct
+call ensure_concept_set_members(@chief_construct_concept_id, @parent_concept_id, 1);
