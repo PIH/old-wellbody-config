@@ -110,21 +110,6 @@ call ensure_concept(@concept_id, 'c37a5735-3f10-11e4-adec-0800271c1b75', 'Diasto
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@diastolic_data_concept_id, @child_concept_id, 2);
 
--- Posture
-call ensure_concept(@concept_id, 'c44c3c37-3f10-11e4-adec-0800271c1b75', 'Posture','Posture', 'Coded', 'Test', false);
-set @posture_concept_id = @concept_id;
-call ensure_concept_set_members(@blood_pressure_concept_id, @posture_concept_id, 3);
-
--- Sitting
-call ensure_concept(@concept_id, 'c44cfed2-3f10-11e4-adec-0800271c1b75', 'Sitting','Sitting', 'N/A', 'Misc', false);
-set @child_concept_id = @concept_id;
-call ensure_concept_answer (@posture_concept_id, @child_concept_id, 1);
-
--- Supine
-call ensure_concept(@concept_id, 'c44d6b8e-3f10-11e4-adec-0800271c1b75', 'Supine','Supine', 'N/A', 'Misc', false);
-set @child_concept_id = @concept_id;
-call ensure_concept_answer (@posture_concept_id, @child_concept_id, 2);
-
 -- Respiratory Rate Set
 call ensure_concept(@concept_id, '00ca72e2-cc86-4d36-aeb1-b90f803f6c9c', 'Respiratory Rate Set','Respiratory Rate', 'N/A', 'ConvSet', true);
 set @rr_concept_id = @concept_id;
