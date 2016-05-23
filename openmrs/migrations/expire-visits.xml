@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="add-visit-expire-hours" author="tw">
+        <comment>Add global property to configure visit auto expire hours</comment>
+        <sql>
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emrapi.visitExpireHours', '12', 'Number of hours after which visit can be auto closed', uuid())
+            ON DUPLICATE KEY UPDATE property_value = '12';
+        </sql>
+    </changeSet>
+
+    <changeSet id="delete-autoCloseVisitType" author="tw">
+        <comment>Delete OpenMRS property autoCloseVisitType since we don't use that scheduler (to avoid confusion)</comment>
+        <sql>
+            DELETE FROM global_property WHERE property like '%visits.autoCloseVisitType%';
+        </sql>
+    </changeSet>
+
+    <changeSet id="delete-autoCloseMinimumNumberOfDays" author="tw">
+        <comment>Delete OpenMRS property visits.autoCloseMinimumNumberOfDays since we don't use that scheduler (to avoid confusion)</comment>
+        <sql>
+            DELETE FROM global_property WHERE property like '%visits.autoCloseMinimumNumberOfDays%';
+        </sql>
+    </changeSet>
+
+    <changeSet id="delete-AutoCloseVisitsTask" author="tw">
+        <comment>Delete OpenMRS scheduler AutoCloseVisitsTask since we don't use that scheduler (to avoid confusion)</comment>
+        <delete tableName="scheduler_task_config">
+            <where>schedulable_class = 'org.openmrs.scheduler.tasks.AutoCloseVisitsTask'</where>
+        </delete>
+    </changeSet>
+
+    <changeSet id="add-CloseStaleVisitsTask" author="tw">
+        <comment>Add Bahmni preferred EMR API scheduler which closes stale visits</comment>
+        <insert tableName="scheduler_task_config">
+            <column name="name" value="Close Stale Visits Task" />
+            <column name="description" value="Auto close visit task after number of hours specified by emrapi.visitExpireHours" />
+            <column name="schedulable_class" value="org.openmrs.module.emrapi.adt.CloseStaleVisitsTask" />
+            <column name="start_on_startup" valueBoolean="true" />
+            <column name="start_time_pattern" value="MM/dd/yyyy HH:mm:ss" />
+            <column name="start_time" valueDate="2014-04-30T23:59:59" />
+            <column name="repeat_interval" value="86400" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+            <column name="created_by" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
