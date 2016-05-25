@@ -23,6 +23,9 @@
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": false,
+            "addressHierarchy": {
+                "freeTextAddressFields": ["address1", "address2"]
+            },
             "printOptions": [
                 {
                     "label": "Print Reg. Card (<u>L</u>ocal)",
