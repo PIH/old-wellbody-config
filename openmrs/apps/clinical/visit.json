@@ -28,10 +28,32 @@
                     "showDetailsButton": true
                 }
             },
+            "disposition": {
+                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "type": "disposition",
+                "displayOrder": 2,
+                "config": {
+                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY"
+                }
+            },
+            "Treatments": {
+                "type": "treatment",
+                "displayOrder": 3,
+                "config": {
+                    "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "showProvider":false
+                }
+            },
             "vitals":{
                 "type": "observation",
                 "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
-                "displayOrder": 2,
+                "displayOrder": 4,
                 "config": {
                     "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
                     "conceptNames": [
@@ -42,11 +64,23 @@
             },
             "labOrders":{
                 "type":"order",
-                "displayOrder": 3,
+                "displayOrder": 5,
                 "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "config":{
                     "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                     "orderType": "Lab Order"
+                }
+            },
+            "historyAndExaminations":{
+                "type": "observation",
+                "displayOrder": 6,
+                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                "config": {
+                    "conceptNames": [
+                        "Physical exam"
+                    ],
+                    "scope": "latest",
+                    "numberOfVisits": "1"
                 }
             }
         }
