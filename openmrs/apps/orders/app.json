@@ -1,11 +1,11 @@
 {
-        "id": "bahmni.orders",
-        "extensionPoints": [
-            {
-                "id": "org.bahmni.orders.search",
-                "description": "Orders Dashboard"
-            }
-        ],
+    "id": "bahmni.orders",
+    "extensionPoints": [
+      {
+          "id": "org.bahmni.orders.search",
+          "description": "Orders Dashboard"
+      }
+    ],
     "config" : {
       "maxConceptSetLevels": 3,
       "conceptSetUI": {

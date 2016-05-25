@@ -1,7 +1,59 @@
 {
+    "visit":{
+        "translationKey": "Visit",
+        "displayByDefault": true,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Visit",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections": {
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "displayOrder": 0,
+                "config": {
+                    "title": "PatientInformation",
+                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                    "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"]
+                }
+            },
+            "diagnoses":{
+                "type": "diagnosis",
+                "displayOrder": 1,
+                "config": {
+                    "translationKey" : "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                    "showCertainty": false,
+                    "showOrder": false,
+                    "showDetailsButton": true
+                }
+            },
+            "vitals":{
+                "type": "observation",
+                "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                "displayOrder": 2,
+                "config": {
+                    "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "scope": "latest"
+                }
+            },
+            "labOrders":{
+                "type":"order",
+                "displayOrder": 3,
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+                "config":{
+                    "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+                    "orderType": "Lab Order"
+                }
+            }
+        }
+    },
     "general":{
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
-        "displayByDefault": true,
+        "displayByDefault": false,
         "printing": {
             "title": "Bahmni",
             "header": "Visit",
