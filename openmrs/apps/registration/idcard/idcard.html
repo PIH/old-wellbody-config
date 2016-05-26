@@ -1,0 +1,122 @@
+<style type="text/css">
+    @page {
+        margin: 0mm 0mm 0mm 0mm;
+        padding: 0mm 0mm 0mm 0mm;
+    }
+    body {
+        font-size: 4pt;
+        font-family: Sans-Serif;
+    }
+    #id-card-content {
+        margin-left: .25in;
+        width: 2in;
+    }
+    #top-header {
+        width:100%;
+        border-bottom: 1px solid black;
+    }
+    #address-section {
+        width: 100%;
+    }
+    #demographic-section {
+        margin: 0;
+        border-bottom: 1px solid black;
+        text-align: left;
+        width:100%;
+    }
+    #bottom-section {
+        width: 100%;
+    }
+    .heading {
+        font-size: 8pt;
+        font-weight:normal;
+    }
+    .label {
+        text-align: left;
+    }
+    .title {
+        font-weight:normal;
+    }
+    .table-layout {
+        display: table;
+    }
+    .table-row {
+        display: table-row;
+    }
+    .section {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .column {
+        text-align: left;
+        vertical-align: top;
+        display: table-cell;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    .last {
+        width: 100%;
+    }
+    #barcode {
+        width: 0.5in;
+    }
+</style>
+
+<div id="id-card-content">
+
+    <div id="top-header">
+        <span class="heading">{{patient.familyName}}, {{patient.givenName}}</span>
+    </div>
+
+    <div id="address-section" class="section">
+        <div class="label">{{patient.address.address2}}</div>
+        <div class="label">{{patient.address.address1}}</div>
+        <div class="label">
+            {{patient.address.cityVillage}}, {{patient.address.countyDistrict}}, {{patient.address.stateProvince}}
+        </div>
+        <div class="label">{{patient.address.country}}</div>
+    </div>
+
+    <div id="demographic-section" class="table-layout section">
+        <div class="table-row">
+            <span class="column title">Gender</span>
+            <span class="column title">Birthdate</span>
+            <span class="column title last">Telephone Number</span>
+        </div>
+        <div class="table-row">
+            <span class="column">{{patient.gender == 'M' ? 'Male' : 'Female'}}</span>
+            <span class="column">{{patient.birthdate | bahmniDate}}</span>
+            <span class="column last">{{patient.telephoneNumber}}</span>
+        </div>
+    </div>
+
+    <div id="bottom-section" class="table-layout section">
+        <div class="table-row">
+            <span class="column">
+                <img id="barcode"
+                     jsbarcode-value="{{patient.identifier}}"
+                     jsbarcode-width="1"
+                     jsbarcode-height="30"
+                     jsbarcode-margin="0"
+                     jsbarcode-displayValue="false"
+                     jsbarcode-textAlign="left"
+                     jsbarcode-textMargin="0"
+                     jsbarcode-fontSize="10"
+
+                />
+                <div class="title">{{patient.identifier}}</div>
+            </span>
+            <span class="column last">
+                <div class="label title">PIH Sierra Leone</div>
+                <div class="label">Registration Date: {{patient.registrationDate | bahmniDate}}</div>
+            </span>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="/bahmni_config/openmrs/apps/registration/idcard/js/JsBarcode.all.min.js"></script>
+<script>
+    (function() {
+        JsBarcode("#barcode").init();
+    })();
+</script>
