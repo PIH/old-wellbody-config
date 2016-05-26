@@ -24,6 +24,7 @@
             "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": false,
             "addressHierarchy": {
+                "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["address1", "address2"]
             },
             "printOptions": [
