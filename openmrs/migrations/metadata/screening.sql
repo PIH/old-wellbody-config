@@ -2,19 +2,19 @@
 
 set @concept_id = 0;
 
--- Screening concept set
-call ensure_concept(@concept_id, '3F241C53-5E79-4BD6-8D10-B918C972603C', 'Screening','Screening', 'N/A', 'ConvSet', true);
-set @screening_concept_id = @concept_id;
+-- Consultation form
+call ensure_concept(@concept_id, 'CF417837-B896-4011-9C12-749626D2C245', 'Consultation','Consultation', 'N/A', 'ConvSet', true);
+set @consultation_form_concept_id = @concept_id;
 
--- Add "Screening" to "All Observation Templates" concept set
+-- Add "Consultation form" to "All Observation Templates" concept set
 call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Observation Templates','All Observation Templates', 'N/A', 'ConvSet', true);
 set @obs_templates_concept_id = @concept_id;
-call ensure_concept_set_members(@obs_templates_concept_id, @screening_concept_id, 2);
+call ensure_concept_set_members(@obs_templates_concept_id, @consultation_form_concept_id, 2);
 
 -- 1. TB Screening Construct
 call ensure_concept(@concept_id, '3ADF9CF5-BADF-4FA7-AFE4-34C2D1C53823', 'TB Screening Construct','TB Screening', 'N/A', 'ConvSet', true);
 set @tb_screening_concept_id = @concept_id;
-call ensure_concept_set_members(@screening_concept_id, @tb_screening_concept_id, 1);
+call ensure_concept_set_members(@consultation_form_concept_id, @tb_screening_concept_id, 1);
 
 -- TB Screening data
 call ensure_concept(@concept_id, 'E55F4F83-A5D8-43C2-A916-0C488DBA843B', 'TB Screening data','TB Screening', 'N/A', 'Concept Details', true);
