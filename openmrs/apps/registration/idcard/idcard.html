@@ -69,11 +69,10 @@
 
     <div id="address-section" class="section">
         <div class="label">{{patient.address.address2}}</div>
-        <div class="label">{{patient.address.address1}}</div>
+        <div class="label">{{patient.address.cityVillage}}, {{patient.address.address1}}</div>
         <div class="label">
-            {{patient.address.cityVillage}}, {{patient.address.countyDistrict}}, {{patient.address.stateProvince}}
+            {{patient.address.stateProvince}}, {{patient.address.countyDistrict}}, {{patient.address.country}}
         </div>
-        <div class="label">{{patient.address.country}}</div>
     </div>
 
     <div id="demographic-section" class="table-layout section">
