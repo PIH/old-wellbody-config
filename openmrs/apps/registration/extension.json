@@ -75,17 +75,6 @@
         },
         "order": 3,
         "requiredPrivilege": "Edit Visits"
-    },
-    "visitChiefComplaint":{
-        "id": "bahmni.registration.conceptSetGroup.visitChiefComplaint",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Chief complaint construct",
-            "required":true
-        },
-        "order": 4,
-        "requiredPrivilege": "Edit Visits"
-}
+    }
 
 }
