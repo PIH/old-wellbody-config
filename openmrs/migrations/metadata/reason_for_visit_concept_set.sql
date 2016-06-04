@@ -155,12 +155,3 @@ call ensure_concept_answer (@parent_concept_id, @child_concept_id, 10);
 call ensure_concept(@concept_id, '19b6e33c-a6cc-4b0e-9ad1-aa42062500e4', 'TB', 'TB', 'N/A', 'Misc', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 11);
-
--- Chief complaint Construct
-call ensure_concept(@concept_id, 'AA0705F2-4B6D-453E-9B0B-832AF8D93A21', 'Chief complaint construct','Chief complaint', 'N/A', 'Misc', true);
-set @chief_construct_concept_id = @concept_id;
--- Chief complaint
-call ensure_concept(@concept_id, '160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 'Chief complaint','Chief complaint', 'Text', 'Misc', false);
-set @parent_concept_id = @concept_id;
--- add Chief complaint to the Chief complaint Construct
-call ensure_concept_set_members(@chief_construct_concept_id, @parent_concept_id, 1);
