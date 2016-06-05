@@ -4,7 +4,7 @@
         padding: 0mm 0mm 0mm 0mm;
     }
     body {
-        font-size: 8pt;
+        font-size: 10pt;
         font-family: Sans-Serif;
     }
     #id-card-content {
@@ -28,7 +28,7 @@
         width: 100%;
     }
     .heading {
-        font-size: 12pt;
+        font-size: 14pt;
         font-weight:normal;
     }
     .label {
@@ -68,10 +68,13 @@
     </div>
 
     <div id="address-section" class="section">
-        <div class="label">{{patient.address.address2}}</div>
-        <div class="label">{{patient.address.cityVillage}}, {{patient.address.address1}}</div>
+        <div class="label">{{patient.address.address2}}&nbsp;</div>
+        <div class="label">{{patient.address.cityVillage}}&nbsp;</div>
         <div class="label">
-            {{patient.address.stateProvince}}, {{patient.address.countyDistrict}}, {{patient.address.country}}
+            {{patient.address.address1}}, {{patient.address.stateProvince}}
+        </div>
+        <div class="label">
+            {{patient.address.countyDistrict}}, {{patient.address.country}}
         </div>
     </div>
 
@@ -105,7 +108,7 @@
                 <div class="title">{{patient.identifier}}</div>
             </span>
             <span class="column last">
-                <div class="label title">PIH Sierra Leone</div>
+                <div class="label title">Wellbody Clinic Dorma</div>
                 <div class="label">Registration Date: {{patient.registrationDate | bahmniDate}}</div>
             </span>
         </div>
