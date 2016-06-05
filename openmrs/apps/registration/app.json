@@ -51,7 +51,8 @@
                 }
             },
             "fieldValidation" : {
-                "givenName | familyName | " : {"pattern" : "^[\\p{L} .-]+$", "errorMessage" : "Should contain only valid characters"}
+                "familyName" : {"pattern" : "[a-zA-Z -]{0,}", "errorMessage" : "Last Name should contain characters"},
+                "givenName" : {"pattern" : "[a-zA-Z -]{0,}", "errorMessage" : "First Name should contain characters"}
             },
             "patientSearch": {
                 "customAttributes": {
