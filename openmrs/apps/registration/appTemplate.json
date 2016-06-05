@@ -12,8 +12,8 @@
             },
             "defaultIdentifierPrefix":{
                 "name": "defaultIdentifierPrefix",
-                "description": "Default identifier prefix used in search, create patient. eg. GAN",
-                "defaultValue": null
+                "description": "Default identifier prefix used in search, create patient. eg. WBA",
+                "defaultValue": "WBA"
             },
             "searchByIdForwardUrl":{
                 "name": "searchByIdForwardUrl",

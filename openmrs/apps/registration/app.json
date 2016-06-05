@@ -58,7 +58,8 @@
                 "customAttributes": {
                     "label": "WBA Paper ID",
                     "fields": ["WBA Paper ID"]
-                }
+                },
+                "searchByPatientIdentifier": true
             }
         }
 }
