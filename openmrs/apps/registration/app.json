@@ -23,6 +23,7 @@
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": false,
+            "afterVisitSaveTransitionToState": "search",
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["address1", "address2"]
