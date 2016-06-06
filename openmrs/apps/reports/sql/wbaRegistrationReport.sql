@@ -41,7 +41,7 @@ left outer join person_attribute_type pat ON pat.person_attribute_type_id = pa.p
 LEFT OUTER JOIN concept_name cn on pa.value = cn.concept_id and cn.locale = 'en' and cn.locale_preferred = '1'  and cn.voided = 0
 group by p.patient_id) attributesjoin on attributesjoin.patient_id = p.patient_id
 where 1=1
-AND date(p.date_created) between BETWEEN '#startDate#' and '#endDate#'
+AND date(p.date_created) BETWEEN '#startDate#' and '#endDate#'
 order by p.date_created
 ;
 
