@@ -12,14 +12,31 @@ set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @consultation_form_concept_id, 2);
 
 -- 1. TB Screening Construct
-call ensure_concept(@concept_id, '3ADF9CF5-BADF-4FA7-AFE4-34C2D1C53823', 'TB Screening Construct','TB Screening', 'N/A', 'ConvSet', true);
+call ensure_concept(@concept_id, '3ADF9CF5-BADF-4FA7-AFE4-34C2D1C53823', 'TB Screening Construct','Screening', 'N/A', 'ConvSet', true);
 set @tb_screening_concept_id = @concept_id;
 call ensure_concept_set_members(@consultation_form_concept_id, @tb_screening_concept_id, 1);
+
+-- 1.a. Pregnancy Question data
+call ensure_concept(@concept_id, 'FDCF677B-69F1-4B6C-AEF0-BDA784DA2441', 'Pregnant data','Pregnant', 'N/A', 'Concept Details', true);
+set @pregnant_question_data_concept_id = @concept_id;
+call ensure_concept_set_members(@tb_screening_concept_id, @pregnant_question_data_concept_id, 1);
+-- Pregnancy question
+call ensure_concept(@concept_id, '152B4E79-8B05-4776-B10C-851DFEEF95A8', 'Pregnancy question','Pregnancy question', 'Coded', 'Misc', false);
+set @pregnant_question_concept_id = @concept_id;
+call ensure_concept_set_members(@pregnant_question_data_concept_id, @pregnant_question_concept_id, 1);
+-- Yes
+call ensure_concept(@concept_id, '17BD7650-C745-45BE-880F-FF323880DDF4', 'Yes','Yes', 'N/A', 'Misc', false);
+set @yes_concept_id = @concept_id;
+call ensure_concept_answer(@pregnant_question_concept_id, @yes_concept_id, 1);
+-- No
+call ensure_concept(@concept_id, '83930A21-C3DD-400C-A24D-91A835D77FFC', 'No','No', 'N/A', 'Misc', false);
+set @no_concept_id = @concept_id;
+call ensure_concept_answer (@pregnant_question_concept_id, @no_concept_id, 2);
 
 -- TB Screening data
 call ensure_concept(@concept_id, 'E55F4F83-A5D8-43C2-A916-0C488DBA843B', 'TB Screening data','TB Screening', 'N/A', 'Concept Details', true);
 set @tb_data_concept_id = @concept_id;
-call ensure_concept_set_members(@tb_screening_concept_id, @tb_data_concept_id, 1);
+call ensure_concept_set_members(@tb_screening_concept_id, @tb_data_concept_id, 2);
 
 -- TB Screening answer
 call ensure_concept(@concept_id, '54A1DD43-01C3-4825-AA7C-89630E7FEFAC', 'TB Screening answer','TB Screening answer', 'Coded', 'Misc', false);

@@ -77,7 +77,7 @@
                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "config": {
                     "conceptNames": [
-                        "Physical exam"
+                        "Consultation"
                     ],
                     "scope": "latest",
                     "numberOfVisits": "1"

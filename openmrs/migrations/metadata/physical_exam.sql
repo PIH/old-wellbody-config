@@ -14,7 +14,7 @@ call ensure_concept_set_members(@obs_templates_concept_id, @consultation_form_co
 -- 1. Exam ConvSet
 call ensure_concept(@concept_id, '41BA03B8-3FFB-4B76-B5C2-168D6E78DF8F', 'Exam','Exam', 'N/A', 'ConvSet', true);
 set @examm_concept_id = @concept_id;
-call ensure_concept_set_members(@consultation_form_concept_id, @examm_concept_id, 6);
+call ensure_concept_set_members(@consultation_form_concept_id, @examm_concept_id, 8);
 -- HEENT data
 call ensure_concept(@concept_id, '3cd75b86-26fe-102b-80cb-0017a47871b2', 'HEENT data','HEENT', 'N/A', 'Concept Details', true);
 set @heent_data_concept_id = @concept_id;

@@ -69,12 +69,11 @@ call ensure_concept_set_members(@history_present_illness_data_concept_id, @conce
 call ensure_concept(@concept_id, '79C342C6-A886-4945-A268-FF74096EC3AA', 'Medical history construct','Medical history', 'N/A', 'ConvSet', true);
 set @medical_history_concept_id = @concept_id;
 call ensure_concept_set_members(@consultation_form_concept_id, @medical_history_concept_id, 5);
-
 -- 4.a. Medical history Question data
 call ensure_concept(@concept_id, 'CCE05FF9-ED45-440D-8F9B-A5295EDAC44B', 'Medical history data','Medical history', 'N/A', 'Concept Details', true);
 set @medical_history_question_data_concept_id = @concept_id;
 call ensure_concept_set_members(@medical_history_concept_id, @medical_history_question_data_concept_id, 1);
--- Allergies question
+-- Medical history question
 call ensure_concept(@concept_id, '3706DC6C-7373-4786-A93D-9119BE27ABE1', 'Medical history question','Medical history question', 'Coded', 'Misc', false);
 set @medical_history_question_concept_id = @concept_id;
 call ensure_concept_set_members(@medical_history_question_data_concept_id, @medical_history_question_concept_id, 1);
@@ -107,3 +106,59 @@ call ensure_concept_set_members(@medical_history_concept_id, @medical_history_ot
 -- Allergies text field
 call ensure_concept(@concept_id, 'AD332C16-3DD2-4A76-84CE-B730308D8A55', 'Medical history other','Medical history other', 'Text', 'Misc', false);
 call ensure_concept_set_members(@medical_history_others_data_concept_id, @concept_id, 1);
+
+-- 5. Current Medications Construct
+call ensure_concept(@concept_id, '01F3D8F2-8AF3-4F9A-B5A9-1D82219D1E0F', 'Current Medications construct','Current Medications', 'N/A', 'ConvSet', true);
+set @current_medications_concept_id = @concept_id;
+call ensure_concept_set_members(@consultation_form_concept_id, @current_medications_concept_id, 6);
+-- 3.a. Current Medications data
+call ensure_concept(@concept_id, 'D8219A6D-99D0-4494-8746-E66EBDEF7B82', 'Current Medications data','Current Medications', 'N/A', 'Concept Details', true);
+set @current_medications_data_concept_id = @concept_id;
+call ensure_concept_set_members(@current_medications_concept_id, @current_medications_data_concept_id, 1);
+-- Current Medications text field
+call ensure_concept(@concept_id, '4B258698-1ACC-47E3-9633-38431B4617F4', 'Current Medications','Current Medications', 'Text', 'Misc', false);
+call ensure_concept_set_members(@current_medications_data_concept_id, @concept_id, 1);
+
+-- 6. Habits ConvSet
+call ensure_concept(@concept_id, '65A515A2-4253-4D90-9000-6462BB4B2B29', 'Habits construct','Habits', 'N/A', 'ConvSet', true);
+set @habits_concept_id = @concept_id;
+call ensure_concept_set_members(@consultation_form_concept_id, @habits_concept_id, 7);
+
+-- 6.a. Tobacco Question data
+call ensure_concept(@concept_id, '645CA4DB-99B8-43BD-AB95-D10A80498A05', 'Tobacco data','Tobacco', 'N/A', 'Concept Details', true);
+set @tobacco_question_data_concept_id = @concept_id;
+call ensure_concept_set_members(@habits_concept_id, @tobacco_question_data_concept_id, 1);
+-- Tobacco question
+call ensure_concept(@concept_id, 'E4FD5B7F-C5E1-498D-9EDC-A7016950482D', 'Tobacco question','Tobacco question', 'Coded', 'Misc', false);
+set @tobacco_question_concept_id = @concept_id;
+call ensure_concept_set_members(@tobacco_question_data_concept_id, @tobacco_question_concept_id, 1);
+-- Yes
+call ensure_concept_answer(@tobacco_question_concept_id, @yes_concept_id, 1);
+-- No
+call ensure_concept_answer (@tobacco_question_concept_id, @no_concept_id, 2);
+
+-- 6.b. Alcohol Question data
+call ensure_concept(@concept_id, '1E4F0D9B-AC45-4305-93E3-D2F652E65436', 'Alcohol data','Alcohol', 'N/A', 'Concept Details', true);
+set @alcohol_question_data_concept_id = @concept_id;
+call ensure_concept_set_members(@habits_concept_id, @alcohol_question_data_concept_id, 2);
+-- Alcohol question
+call ensure_concept(@concept_id, 'D2D98452-3976-4CC0-9AAC-1DB8DDBA04D3', 'Alcohol question','Alcohol question', 'Coded', 'Misc', false);
+set @alcohol_question_concept_id = @concept_id;
+call ensure_concept_set_members(@alcohol_question_data_concept_id, @alcohol_question_concept_id, 1);
+-- Yes
+call ensure_concept_answer(@alcohol_question_concept_id, @yes_concept_id, 1);
+-- No
+call ensure_concept_answer (@alcohol_question_concept_id, @no_concept_id, 2);
+
+-- 6.c. Drugs Question data
+call ensure_concept(@concept_id, 'D7F33414-644C-4661-99E0-435F7FE2FD46', 'Drugs data','Drugs', 'N/A', 'Concept Details', true);
+set @drugs_question_data_concept_id = @concept_id;
+call ensure_concept_set_members(@habits_concept_id, @drugs_question_data_concept_id, 3);
+-- Drugs question
+call ensure_concept(@concept_id, 'B209CBA6-871C-43F6-AA30-F4CFFBBA1FE6', 'Drugs question','Drugs question', 'Coded', 'Misc', false);
+set @drugs_question_concept_id = @concept_id;
+call ensure_concept_set_members(@drugs_question_data_concept_id, @drugs_question_concept_id, 1);
+-- Yes
+call ensure_concept_answer(@drugs_question_concept_id, @yes_concept_id, 1);
+-- No
+call ensure_concept_answer (@drugs_question_concept_id, @no_concept_id, 2);
