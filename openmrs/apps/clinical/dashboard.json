@@ -106,7 +106,7 @@
                 }
             },
             "historyAndExaminations": {
-                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                "translationKey": "CONSULTATION_PAGE_KEY",
                 "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 7,

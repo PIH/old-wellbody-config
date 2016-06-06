@@ -43,7 +43,7 @@
         "defaultVisitType": "OPD",
         "visitTypeForRetrospectiveEntries": "OPD",
         "maxConceptSetLevels": 3,
-        "allowOnlyCodedDiagnosis": false,
+        "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {
             "Chief Complaint Data": {
                 "autocomplete":true,
@@ -59,6 +59,9 @@
                 "buttonSelect": true
             },
             "TB Screening answer" : {
+                "multiSelect": true
+            },
+            "Medical history question" : {
                 "multiSelect": true
             },
             "P/A Presenting Part": {

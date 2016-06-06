@@ -74,7 +74,7 @@
             "historyAndExaminations":{
                 "type": "observation",
                 "displayOrder": 6,
-                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                "translationKey": "CONSULTATION_PAGE_KEY",
                 "config": {
                     "conceptNames": [
                         "Consultation"
