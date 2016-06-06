@@ -2,24 +2,41 @@
 
 set @concept_id = 0;
 
--- Screening concept set
-call ensure_concept(@concept_id, '3F241C53-5E79-4BD6-8D10-B918C972603C', 'Screening','Screening', 'N/A', 'ConvSet', true);
-set @screening_concept_id = @concept_id;
+-- Consultation form
+call ensure_concept(@concept_id, 'CF417837-B896-4011-9C12-749626D2C245', 'Consultation','Consultation', 'N/A', 'ConvSet', true);
+set @consultation_form_concept_id = @concept_id;
 
--- Add "Screening" to "All Observation Templates" concept set
+-- Add "Consultation form" to "All Observation Templates" concept set
 call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Observation Templates','All Observation Templates', 'N/A', 'ConvSet', true);
 set @obs_templates_concept_id = @concept_id;
-call ensure_concept_set_members(@obs_templates_concept_id, @screening_concept_id, 2);
+call ensure_concept_set_members(@obs_templates_concept_id, @consultation_form_concept_id, 2);
 
 -- 1. TB Screening Construct
-call ensure_concept(@concept_id, '3ADF9CF5-BADF-4FA7-AFE4-34C2D1C53823', 'TB Screening Construct','TB Screening', 'N/A', 'ConvSet', true);
+call ensure_concept(@concept_id, '3ADF9CF5-BADF-4FA7-AFE4-34C2D1C53823', 'TB Screening Construct','Screening', 'N/A', 'ConvSet', true);
 set @tb_screening_concept_id = @concept_id;
-call ensure_concept_set_members(@screening_concept_id, @tb_screening_concept_id, 1);
+call ensure_concept_set_members(@consultation_form_concept_id, @tb_screening_concept_id, 1);
+
+-- 1.a. Pregnancy Question data
+call ensure_concept(@concept_id, 'FDCF677B-69F1-4B6C-AEF0-BDA784DA2441', 'Pregnant data','Pregnant', 'N/A', 'Concept Details', true);
+set @pregnant_question_data_concept_id = @concept_id;
+call ensure_concept_set_members(@tb_screening_concept_id, @pregnant_question_data_concept_id, 1);
+-- Pregnancy question
+call ensure_concept(@concept_id, '152B4E79-8B05-4776-B10C-851DFEEF95A8', 'Pregnancy question','Pregnancy question', 'Coded', 'Misc', false);
+set @pregnant_question_concept_id = @concept_id;
+call ensure_concept_set_members(@pregnant_question_data_concept_id, @pregnant_question_concept_id, 1);
+-- Yes
+call ensure_concept(@concept_id, '17BD7650-C745-45BE-880F-FF323880DDF4', 'Yes','Yes', 'N/A', 'Misc', false);
+set @yes_concept_id = @concept_id;
+call ensure_concept_answer(@pregnant_question_concept_id, @yes_concept_id, 1);
+-- No
+call ensure_concept(@concept_id, '83930A21-C3DD-400C-A24D-91A835D77FFC', 'No','No', 'N/A', 'Misc', false);
+set @no_concept_id = @concept_id;
+call ensure_concept_answer (@pregnant_question_concept_id, @no_concept_id, 2);
 
 -- TB Screening data
 call ensure_concept(@concept_id, 'E55F4F83-A5D8-43C2-A916-0C488DBA843B', 'TB Screening data','TB Screening', 'N/A', 'Concept Details', true);
 set @tb_data_concept_id = @concept_id;
-call ensure_concept_set_members(@tb_screening_concept_id, @tb_data_concept_id, 1);
+call ensure_concept_set_members(@tb_screening_concept_id, @tb_data_concept_id, 2);
 
 -- TB Screening answer
 call ensure_concept(@concept_id, '54A1DD43-01C3-4825-AA7C-89630E7FEFAC', 'TB Screening answer','TB Screening answer', 'Coded', 'Misc', false);

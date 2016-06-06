@@ -26,7 +26,7 @@
             "afterVisitSaveTransitionToState": "search",
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "freeTextAddressFields": ["address1", "address2"]
+                "freeTextAddressFields": ["cityVillage", "address2"]
             },
             "printOptions": [
                 {
@@ -52,13 +52,15 @@
                 }
             },
             "fieldValidation" : {
-                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
+                "familyName" : {"pattern" : "[a-zA-Z -]{0,}", "errorMessage" : "Last Name should contain characters"},
+                "givenName" : {"pattern" : "[a-zA-Z -]{0,}", "errorMessage" : "First Name should contain characters"}
             },
             "patientSearch": {
                 "customAttributes": {
                     "label": "WBA Paper ID",
                     "fields": ["WBA Paper ID"]
-                }
+                },
+                "searchByPatientIdentifier": true
             }
         }
 }

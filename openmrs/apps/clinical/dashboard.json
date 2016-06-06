@@ -106,20 +106,20 @@
                 }
             },
             "historyAndExaminations": {
-                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                "translationKey": "CONSULTATION_PAGE_KEY",
                 "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 7,
                 "dashboardConfig": {
                     "showDetailsButton": true,
                     "conceptNames": [
-                        "Physical exam"
+                        "Consultation"
                     ],
                     "numberOfVisits": 2
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
-                        "Physical exam"
+                        "Consultation"
                     ],
                     "numberOfVisits": 2,
                     "showDetailsButton": true,
