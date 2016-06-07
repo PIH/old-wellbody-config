@@ -8,3 +8,4 @@ To add the diagnoses to OpenMRS/Bahmni, upload them through the Bahmni UI upload
 
 
 
+
