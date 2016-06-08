@@ -27,7 +27,7 @@
             "afterVisitSaveTransitionToState": "search",
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "freeTextAddressFields": ["cityVillage", "address2"]
+                "freeTextAddressFields": ["address2"]
             },
             "printOptions": [
                 {
