@@ -25,6 +25,7 @@
             "showCasteSameAsLastNameCheckbox": false,
             "showBirthTime": false,
             "afterVisitSaveTransitionToState": "search",
+            "afterVisitSaveForwardUrl": "/search",
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["address2"]
