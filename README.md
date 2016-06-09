@@ -30,7 +30,7 @@ do the following.
 2) Checkout the *bahmni/release-x* branch as a new local branch named after the ticket number you are applying the fix for 
 (ie SL-x)
 
-3) Pop your changes off the stash and commit your changes to this branch with the approach commit message
+3) Pop your changes off the stash and commit your changes to this branch with the approprite commit message
 
 4) Push this new branch up to *PIH* repo as a new branch
  
