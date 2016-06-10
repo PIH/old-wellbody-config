@@ -530,7 +530,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,synonym.3,ans
 461314b9-d351-4e97-b6d7-441bc1903e5d,,Chronic kidney disease,,Diagnosis,N/A,Chronic kidney disease,,,,,ICD-10-WHO,N18.9,SAME-AS
 489db96c-ef65-40d2-a96b-a2f0c59645fb,,Psychosomatic disorder,,Diagnosis,N/A,Psychosomatic disorder,,,,,ICD-10-WHO,F45.9,SAME-AS
 49AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Vesico-vaginal fistula,,Diagnosis,N/A,Vesico-vaginal fistula,,,,,ICD-10-WHO,N82.0,SAME-AS
-4a3740c9-2d22-4c09-bb0f-c8f5250693f3,163411AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,Foot ulcer,,Diagnosis,N/A,Foot ulcer,,,,,ICD-10-WHO,L97,NARROWER-THAN
+163411AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Foot ulcer,,Diagnosis,N/A,Foot ulcer,,,,,ICD-10-WHO,L97,NARROWER-THAN
 4bb094a6-c74b-4481-8f81-b98ff8e4cc39,,Hyperglycemia,,Diagnosis,N/A,Hyperglycemia,,,,,ICD-10-WHO,R73.9,SAME-AS
 51ba536f-6d36-4c43-9d3c-822f511b31ec,,Hypothyroidism,,Diagnosis,N/A,Hypothyroidism,,,,,ICD-10-WHO,E03.9,SAME-AS
 5367e9e0-3330-44a4-a323-9a23967db603,,"Prematurity, 32 weeks",,Diagnosis,N/A,"Prematurity, 32 weeks",,,,,ICD-10-WHO,P07.3,SAME-AS
