@@ -30,7 +30,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,synonym.3,ans
 112917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Small for gestational age,,Diagnosis,N/A,Small for gestational age,,,,,ICD-10-WHO,P05.1,SAME-AS
 112934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Skin ulcer,,Diagnosis,N/A,Skin ulcer,,,,,ICD-10-WHO,L98.4,SAME-AS
 112980AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Shoulder girdle dystocia,,Diagnosis,N/A,Shoulder girdle dystocia,,,,,ICD-10-WHO,O66.0,SAME-AS
-113018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Severe persistent asthma,,Diagnosis,N/A,Severe persistent asthma,,,,,ICD-10-WHO,J45.9,SAME-AS
+113018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Severe persistent asthma,,Diagnosis,N/A,Severe persistent asthma,,,,,ICD-10-WHO,J45.9,NARROWER-THAN
 113046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Senile Cataract,,Diagnosis,N/A,Senile Cataract,,,,,ICD-10-WHO,H25.9,SAME-AS
 113205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Rubella,,Diagnosis,N/A,Rubella,,,,,ICD-10-WHO,B06.9,SAME-AS
 113208AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Rotator Cuff Rupture,,Diagnosis,N/A,Rotator Cuff Rupture,,,,,ICD-10-WHO,M75.1,SAME-AS
