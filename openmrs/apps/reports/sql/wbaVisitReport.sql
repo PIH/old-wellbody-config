@@ -1,6 +1,8 @@
-select p.Patient_id, wba.identifier,e.encounter_datetime,CONCAT(pn.given_name, ' ',pn.family_name) provider,
+select p.Patient_id, wba.identifier,pat_name.given_name, pat_name.family_name,e.encounter_datetime,CONCAT(pn.given_name, ' ',pn.family_name) provider,
 obsjoin.* 
 from patient p
+-- Patient Name
+INNER JOIN person_name pat_name on pat_name.person_id = p.patient_id 
 -- pull in all registration encounters
 INNER JOIN encounter e ON p.patient_id = e.patient_id and e.voided = 0 AND e.encounter_type in
    (select encounter_type_id from encounter_type where name = 'REG') 
