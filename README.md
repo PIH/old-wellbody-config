@@ -48,7 +48,7 @@ branch that has not yet been merged into master.  What is the correct procedure 
 off the previous branch created for the existing commit you are following on from?
 
 
-## Steps for updating Bahmni Apps when upgrading the version of Bahmni Apps we are using
+## Steps for updating Bahmni Apps when upgrading the version of Bahmni we are using
 
 When we upgrade to a new version of Bahmni, we want to start using the version of Bahmni Apps associated with that version,
 but we *don't* want to lose any custom modifications we've made that haven't been merged back in.  What is the best
