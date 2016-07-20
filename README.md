@@ -34,7 +34,7 @@ do the following.
 
 4) Push this new branch up to *PIH* repo as a new branch
  
-5) Find this new branch in th the PIH repo in github and issue a pull request against the Bahmni master branch.  If all 
+5) Find this new branch in th the PIH repo in github and issue a pull request against the Bahmni *master* branch.  If all 
 is correct, this pull request should *only* contain the changes from your current commit.
 
 6) After the pull request has been issued, go back and checkout the *pih/release-x* branch.
@@ -47,21 +47,35 @@ is correct, this pull request should *only* contain the changes from your curren
 branch that has not yet been merged into master.  What is the correct procedure in this case? Should you create a new branch
 off the previous branch created for the existing commit you are following on from?
 
+## Steps for keeping our version of Bahmni Apps up-to-date
+
+(TODO: confirm this is correct)
+
+At regular intervals, we should pull in any new changes to the *bahmni/release-x* branch into our own *pih/release-x* branch.
+
+1) Make sure you have no uncommitted changes.  
+
+2) Check out your local *release-x* branch.  (If you don't have a local *release-x* branch, checkout *pih/release-x* as new 
+local branch *release-x*.)
+
+3) Merge *bahmni/release-x* into your local *release-x*.  (Question: does one have to do anything specific (git fetch?) to make
+sure that the *bahmni/release-x* branch is up-to-date with any remote changes?)
+
+4) Push your local *release-x* up to *pih/release-x*.
 
 ## Steps for updating Bahmni Apps when upgrading the version of Bahmni we are using
 
 When we upgrade to a new version of Bahmni, we want to start using the version of Bahmni Apps associated with that version,
-but we *don't* want to lose any custom modifications we've made that haven't been merged back in.  What is the best
-way to do this?
+but we *don't* want to lose any custom modifications we've made that haven't been merged back in.  
 
-Possible steps:
+Steps:
 
 1) Make sure you have no uncommited changes.  Check out the *bahmni/release-x* branch as a new local branch *release-x* 
 (where x is the version we are upgrading to)
 
 2) Merge the *pih/release-(x-1)* branch (where x-1 is the current version we are using)
 
-3) Resolve conflicts and push this new local branch release-x up to the PIH repo
+3) Resolve conflicts and push this new local branch release-x up to the *PIH* repo
 
 
 
