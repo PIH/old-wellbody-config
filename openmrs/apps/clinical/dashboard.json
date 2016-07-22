@@ -153,7 +153,7 @@
         "printing": {
             "title": "Bahmni",
             "header": "Lab Orders",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../../bahmni_config/openmrs/images/pih-sl-logo.png"
         },
         "sections":{
             "labResults": {
@@ -189,7 +189,7 @@
         "printing": {
             "title": "Bahmni",
             "header": "Prescriptions",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../../bahmni_config/openmrs/images/pih-sl-logo.png"
         },
         "sections":{
             "labResults": {
