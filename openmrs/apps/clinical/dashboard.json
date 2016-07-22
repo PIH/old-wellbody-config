@@ -182,73 +182,28 @@
             }
         }
     },
-    "trends": {
-        "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "patientInformation": {
-                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "type": "patientInformation",
-                "patientAttributes": [
-                    "occupation"
-                ],
-                "addressFields": [
-                    "address1",
-                    "address2",
-                    "cityVillage",
-                    "countryDistrict"
-                ],
-                "displayOrder": 0
-            },
-            "growthChart": {
-                "type": "observationGraph",
-                "title": "Growth Chart",
-                "config": {
-                    "yAxisConcepts": [
-                        "Weight"
-                    ],
-                    "referenceData": "growthChartReference.csv",
-                    "numberOfVisits": 20
-                },
-                "displayOrder": 1
-            },
-            "BP": {
-                "type": "observationGraph",
-                "title": "BP",
-                "config": {
-                    "yAxisConcepts": [
-                        "Systolic Data",
-                        "Diastolic Data"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 2
-            },
-            "weight/BMI": {
-                "type": "observationGraph",
-                "title": "Weight/BMI",
-                "config": {
-                    "yAxisConcepts": [
-                        "Weight",
-                        "BMI"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 3
-            },
-            "observationGraph": {
-                "type": "observationGraph",
-                "title": "Pulse",
-                "config": {
-                    "yAxisConcepts": [
-                        "Pulse Data"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 5
+    "currentPrescriptions": {
+        "translationKey": "Prescriptions",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 1,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Prescriptions",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections":{
+            "labResults": {
+                "translationKey": "Prescriptions",
+                "type": "drugOrderDetails",
+                "displayType": "Full-Page",
+                "displayOrder": 0,
+                "dashboardConfig": {
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                }
             }
         }
     }
