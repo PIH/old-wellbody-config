@@ -146,6 +146,42 @@
             }
         }
     },
+    "orderResults": {
+        "translationKey": "Lab Orders",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Lab Orders",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections":{
+            "labResults": {
+                "translationKey": "Lab Orders",
+                "type": "ordersControl",
+                "orderType": "Lab Order",
+                "displayType": "Full-Page",
+                "displayOrder": 0,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "Lab Order Fulfillment Form"
+                    ],
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Lab Order Fulfillment Form"
+                    ],
+                    "numberOfVisits": 10,
+                    "showDetailsButton":true
+                }
+            }
+        }
+    },
     "trends": {
         "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
         "maxRecentlyViewedPatients": 10,
