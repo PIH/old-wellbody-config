@@ -194,8 +194,7 @@
                 "title": "Weight/BMI",
                 "config": {
                     "yAxisConcepts": [
-                        "Weight",
-                        "BMI"
+                        "Weight Data"
                     ],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 10
