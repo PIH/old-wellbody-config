@@ -200,6 +200,7 @@
                 "dashboardConfig": {
                     "title": null,
                     "numberOfVisits": 1,
+                    "showOnlyActive":true,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false
