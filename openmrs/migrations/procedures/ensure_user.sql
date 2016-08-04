@@ -1,4 +1,5 @@
 -- Ensure a user account exists with the given attributes
+-- Note that password & salt will only be set on new users--existing user passwords will not be updated
 
 CREATE PROCEDURE ensure_user (
   _username    VARCHAR(255),
@@ -18,7 +19,7 @@ BEGIN
   SELECT user_id, person_id INTO _user_id, _person_id FROM users WHERE system_id = _username OR username = _username;
 
   IF (_user_id IS NOT null) THEN
-    UPDATE users SET username = _username, system_id = _username, password = _password, salt = _salt WHERE user_id = _user_id;
+    UPDATE users SET username = _username, system_id = _username WHERE user_id = _user_id;
     UPDATE person SET gender = _gender WHERE person_id = _person_id;
 
     SELECT person_name_id INTO _person_name_id FROM person_name WHERE person_id = _person_id;
