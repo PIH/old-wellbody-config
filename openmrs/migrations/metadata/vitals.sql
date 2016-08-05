@@ -228,3 +228,6 @@ call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 4);
 call ensure_concept(@concept_id, '3cf27e66-26fe-102b-80cb-0017a47871b2', 'Confusion','Confusion', 'N/A', 'Misc', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@conscious_concept_id, @child_concept_id, 5);
+
+-- BMI
+call ensure_concept(@concept_id, '1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 'Body mass index','BMI', 'Numeric', 'Test', false);
